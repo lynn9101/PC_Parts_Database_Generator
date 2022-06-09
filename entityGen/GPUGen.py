@@ -1,4 +1,3 @@
-from html import entities
 import random
 
 BRANDS = ["GeForce GTX", "GeForce RTX", "GeForce GT", "Radeon Pro", "Radeon HD", "Quadro", "FirePro"]
@@ -16,13 +15,13 @@ models = []
 while len(models) < ENTRIES:
     idx = random.randint(0, len(BRANDS) - 1)
     num = random.randint(200, 900) * 10
-    model = BRANDS[idx] + " " + str(num)
+    model = str(BRANDS[idx]) + " " + str(num)
     models.append(model)
 
 memTypes = []
 while len(memTypes) < ENTRIES:
     idx = random.randint(0, len(MEMTYPES) - 1)
-    memType = MEMTYPES[idx]
+    memType = str(MEMTYPES[idx])
     memTypes.append(memType)
 
 memSizes = []
