@@ -1,0 +1,7 @@
+184-pin DIMM
+200-pin SODIMM
+204-pin SODIMM
+240-pin DIMM
+260-pin SODIMM
+288-pin DIMM (DDR4)
+288-pin DIMM (DDR5)
