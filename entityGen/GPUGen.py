@@ -1,43 +1,29 @@
 import random
+from Util import extractArray
+from Util import genNumArr
+from Util import genNum
+from Util import genStr
 
-BRANDS = ["GeForce GTX", "GeForce RTX", "GeForce GT", "Radeon Pro", "Radeon HD", "Quadro", "FirePro"]
-MEMTYPES = ["DDR", "GDDR"]
+BRANDS = extractArray("GPUbrands")
+MEMTYPES = extractArray("GPUMemTypes")
 ENTRIES = 25
 
-partIDs = []
-while len(partIDs) < ENTRIES:
-    num = random.randint(1, 1000)
-    while partIDs.count(num) > 0:
-        num = random.randint(1, 1000)
-    partIDs.append(num)
+partIDs = genNumArr(1, 1000, 1, True, ENTRIES)
 
 models = []
 while len(models) < ENTRIES:
-    idx = random.randint(0, len(BRANDS) - 1)
-    num = random.randint(200, 900) * 10
-    model = str(BRANDS[idx]) + " " + str(num)
+    model = genStr(BRANDS) + " " + str(genNum(200, 900, 10))
     models.append(model)
 
 memTypes = []
 while len(memTypes) < ENTRIES:
-    idx = random.randint(0, len(MEMTYPES) - 1)
-    memType = str(MEMTYPES[idx])
-    memTypes.append(memType)
+    memTypes.append(genStr(MEMTYPES))
 
-memSizes = []
-while len(memSizes) < ENTRIES:
-    memSize = random.randint(2, 16) * 2
-    memSizes.append(memSize)
+memSizes = genNumArr(2, 16, 2, False, ENTRIES)
 
-boostClocks = []
-while len(boostClocks) < ENTRIES:
-    boostClock = random.randint(700, 2800)
-    boostClocks.append(boostClock)
+boostClocks = genNumArr(700, 2800, 1, False, ENTRIES)
 
-coreClocks = []
-while len(coreClocks) < ENTRIES:
-    coreClock = random.randint(100, 2500)
-    coreClocks.append(coreClock)
+coreClocks = genNumArr(100, 2500, 1, False, ENTRIES)
 
 output = "partID,model,memory type,memorysize,boost clock,core clock\n"
 x = 0
