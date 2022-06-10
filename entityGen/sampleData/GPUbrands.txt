@@ -1,0 +1,7 @@
+GeForce GTX
+GeForce RTX
+GeForce GT
+Radeon Pro
+Radeon HD
+Quadro
+FirePro
