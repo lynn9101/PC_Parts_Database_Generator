@@ -30,7 +30,7 @@ while x < ENTRIES:
     output += str(partIDs[x]) + "," + models[x] + "," + memTypes[x] + "," + str(memSizes[x]) + " GB," + str(boostClocks[x]) + "MHz," + str(coreClocks[x]) + "MHz\n"
     x += 1
 
-outFile = open("GPUGen.csv", "w")
+outFile = open("./generatedOutput/GPUGen.csv", "w")
 outFile.write(output)
 outFile.close()
 

@@ -23,7 +23,7 @@ while x < ENTRIES:
     output += str(partIDs[x]) + "," + brandNames[x] + "," + str(pow(2, coreNums[x])) + "," + str(float(coreClocks[x])/float(10)) + "GHz\n"
     x += 1
 
-outFile = open("CPUGen.csv", "w")
+outFile = open("./generatedOutput/CPUGen.csv", "w")
 outFile.write(output)
 outFile.close()
 
