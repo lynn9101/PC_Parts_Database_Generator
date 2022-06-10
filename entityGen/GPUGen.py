@@ -1,10 +1,9 @@
-import random
 from Util import extractArray
 from Util import genNumArr
 from Util import genNum
 from Util import genStr
 
-BRANDS = extractArray("GPUbrands")
+BRANDS = extractArray("GPUBrands")
 MEMTYPES = extractArray("GPUMemTypes")
 ENTRIES = 25
 
@@ -25,7 +24,7 @@ boostClocks = genNumArr(700, 2800, 1, False, ENTRIES)
 
 coreClocks = genNumArr(100, 2500, 1, False, ENTRIES)
 
-output = "partID,model,memory type,memorysize,boost clock,core clock\n"
+output = "GPU part ID,model,memory type,memorysize,boost clock,core clock\n"
 x = 0
 while x < ENTRIES:
     output += str(partIDs[x]) + "," + models[x] + "," + memTypes[x] + "," + str(memSizes[x]) + " GB," + str(boostClocks[x]) + "MHz," + str(coreClocks[x]) + "MHz\n"

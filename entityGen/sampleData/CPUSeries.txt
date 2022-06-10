@@ -1,0 +1,40 @@
+AMD A4
+AMD A6
+AMD A8
+AMD A10
+AMD A12
+AMD Athlon
+AMD Athlon II
+AMD Athlon II X2
+AMD Athlon II X3
+AMD Athlon II X4
+AMD Athlon X2
+AMD Athlon X4
+AMD E2-Series
+AMD FX
+AMD Opteron
+AMD Phenom II X2
+AMD Phenom II X3
+AMD Phenom II X4
+AMD Phenom II X6
+AMD Ryzen 3
+AMD Ryzen 5
+AMD Ryzen 7
+AMD Ryzen 9
+AMD Sempron
+AMD Sempron X2
+AMD Threadripper
+Intel Celeron
+Intel Core 2 Duo
+Intel Core 2 Extreme
+Intel Core 2 Quad
+Intel Core i3
+Intel Core i5
+Intel Core i7
+Intel Core i7 Extreme
+Intel Core i9
+Intel Pentium
+Intel Pentium Gold
+Intel Xeon E
+Intel Xeon E3
+Intel Xeon E5
