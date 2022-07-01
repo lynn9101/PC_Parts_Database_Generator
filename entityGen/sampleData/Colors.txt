@@ -1,0 +1,16 @@
+Black
+Grey
+Beige
+White
+Blue
+Green
+Red
+Silver
+Yellow
+Purple
+Gold
+Pink
+Orange
+Clear
+Camo
+Brown

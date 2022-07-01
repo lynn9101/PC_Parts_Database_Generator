@@ -1,0 +1,45 @@
+4000D AirfloW
+5000D AirfloW
+6000D AirfloW
+7000D AirfloW
+H510
+H510 Elite
+H510 Flow
+iCUE 4000X
+iCUE 5000X
+iCUE 6000X
+iCUE 7000X
+iCUE 8000X
+O11 Dynamic EVO
+O11 Dynamic
+O11 Dynamic Mini
+O11 Air
+O11 Air Mini
+Eclipse P360A
+Eclipse P360B
+Eclipse P380A
+Meshify C
+Meshify D
+Meshify E
+MasterBox Q300L
+MasterBox NR200
+MasterBox NR300
+MasterBox NR400
+Eclipse P300A Mesh
+Lancool II Mesh
+Versa H17
+Lancool 215
+Lancool 300
+Lancool 415
+Matrexx 55 Mesh
+Matrexx 40
+Matrexx 50
+Pure Base 500DX
+Pure Base 600DX
+Pure Base 700DX
+SPEC-DELTA
+H7 Flow
+Carbide 175R
+Carbide 200R
+Carbide 225R
+NX410
