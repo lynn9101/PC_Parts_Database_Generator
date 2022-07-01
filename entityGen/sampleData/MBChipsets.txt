@@ -1,0 +1,146 @@
+AMD 690G
+AMD 740G
+AMD 760G
+AMD 770
+AMD 780G
+AMD 780L
+AMD 785G
+AMD 790FX
+AMD 790GX
+AMD 790X
+AMD 870
+AMD 880G
+AMD 880GX
+AMD 890FX
+AMD 890GX
+AMD 970
+AMD 990FX
+AMD 990X
+AMD A320
+AMD A520
+AMD A55
+AMD A58
+AMD A68H
+AMD A68M
+AMD A70M
+AMD A75
+AMD A78
+AMD A85X
+AMD A88X
+AMD AM1
+AMD B350
+AMD B450
+AMD B550
+AMD Hudson D1
+AMD Hudson M1
+AMD SR5690
+AMD TRX40
+AMD X370
+AMD X399
+AMD X470
+AMD X570
+CPU Integrated
+Intel 3450 / NVIDIA NF200
+Intel 5520
+Intel B150
+Intel B250
+Intel B360
+Intel B365
+Intel B43
+Intel B460
+Intel B560
+Intel B65
+Intel B660
+Intel B75
+Intel B85
+Intel C204
+Intel C206
+Intel C222
+Intel C224
+Intel C226
+Intel C232
+Intel C236
+Intel C242
+Intel C246
+Intel C602
+Intel C602J
+Intel C606
+Intel C612
+Intel G31
+Intel G33
+Intel G41
+Intel G43
+Intel G45
+Intel H110
+Intel H170
+Intel H270
+Intel H310
+Intel H370
+Intel H410
+Intel H470
+Intel H510
+Intel H55
+Intel H57
+Intel H570
+Intel H61
+Intel H610
+Intel H67
+Intel H670
+Intel H77
+Intel H81
+Intel H87
+Intel H97
+Intel ICH8M
+Intel NM10
+Intel NM70
+Intel P35
+Intel P43
+Intel P45
+Intel P55
+Intel P67
+Intel Q170
+Intel Q270
+Intel Q370
+Intel Q45
+Intel Q470
+Intel Q57
+Intel Q570
+Intel Q67
+Intel Q670
+Intel Q77
+Intel Q87
+Intel X299
+Intel X58
+Intel X79
+Intel X99
+Intel Z170
+Intel Z270
+Intel Z370
+Intel Z390
+Intel Z490
+Intel Z590
+Intel Z68
+Intel Z690
+Intel Z75
+Intel Z77
+Intel Z87
+Intel Z97
+NVIDIA GeForce 6100
+NVIDIA GeForce 6150
+NVIDIA GeForce 6150SE
+NVIDIA GeForce 7025
+NVIDIA GeForce 7025 / nForce 630a
+NVIDIA GeForce 7050
+NVIDIA GeForce 8200
+NVIDIA GeForce 9300
+NVIDIA ION
+NVIDIA nForce 430 MCP
+NVIDIA nForce 590 SLI MCP
+NVIDIA nForce 720D
+NVIDIA nForce 750a
+NVIDIA nForce 750a SLI
+NVIDIA nForce 750i SLI
+NVIDIA nForce 790i SLI
+NVIDIA nForce 980a
+NVIDIA nForce 980a SLI
+VIA P4M890
