@@ -3,10 +3,10 @@ from Util import genNumArr
 from Util import genNum
 from Util import genStr
 
-MANUFACTURER = extractArray("CaseManufacture")
-MODEL = extractArray("CaseModel")
+MANUFACTURER = extractArray("PowerManufacture")
+MODEL = extractArray("PowerModels")
 COLORS = extractArray("Colors")
-FORMFACTORS = extractArray("MBFormFactors")
+MODULARITY = extractArray("PowerModularity")
 ENTRIES = 25
 
 modelNames = []
@@ -24,17 +24,19 @@ while len(colors) < ENTRIES:
     else:
         colors.append(genStr(COLORS) + "/" + genStr(COLORS))
 
-formFactors = []
-while len(formFactors) < ENTRIES:
-    formFactors.append(genStr(FORMFACTORS))
+wattages = genNumArr(180, 2000, 10, False, ENTRIES)
 
-output = "Model Name,Color,Form Factor\n"
+modularities = []
+while len(modularities) < ENTRIES:
+    modularities.append(genStr(MODULARITY))
+
+output = "Power Supply Model Name,Color,Watts,Modularity\n"
 x = 0
 while x < ENTRIES:
-    output += modelNames[x] + "," + colors[x] + "," + formFactors[x] + "\n"
+    output += modelNames[x] + "," + colors[x] + "," + str(wattages[x]) + "W," + modularities[x] + "\n"
     x += 1
 
-outFile = open("./generatedOutput/CaseGen.csv", "w")
+outFile = open("./generatedOutput/PowerGen.csv", "w")
 outFile.write(output)
 outFile.close()
 

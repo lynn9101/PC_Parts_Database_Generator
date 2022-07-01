@@ -1,0 +1,88 @@
+ABS
+ADATA
+Aerocool
+Anima
+Antec
+Apevia
+Apex
+ARESGAME
+Asus
+Athena Power
+Azza
+be quiet!
+BFG
+BitFenix
+Broadway Com Corp
+Chieftec
+Cooler Master
+CoolMax
+Corsair
+Cougar
+Cyonic
+Deepcool
+Diablotek
+Dynapower
+E-Power
+Enermax
+Enhance
+EVGA
+FirePower
+Fractal Design
+FSP Group
+G.Skill
+GAMDIAS
+GameMax
+Gigabyte
+HEC
+In Win
+Insignia
+Kingwin
+KOLINK
+Kuroutoshikou
+LC-Power
+LEPA
+Lian Li
+Linkworld
+Logisys
+Mars Gaming
+Mistel
+Montech
+MSI
+Mushkin
+Nexus
+NOX
+NZXT
+OCZ
+PC Power & Cooling
+Phanteks
+PowerSpec
+Raidmax
+Replace Power
+RIOTORO
+Rocketfish
+Rosewill
+SeaSonic
+Segotep
+Sentey
+SHARKOON
+SilentiumPC
+Silverstone
+Solid Gear
+Sparkle
+StarTech
+Sunbeam
+Super Flower
+Tacens
+Thermaltake
+Thortech
+Topower
+TUNIQ
+Ultra
+VisionTek
+VIVO
+XClio
+XFX
+Xigmatek
+Xilence
+Xion
+Zalman
