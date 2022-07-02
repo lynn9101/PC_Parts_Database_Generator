@@ -1,0 +1,79 @@
+Acer
+ADATA
+Addlink
+AMD
+Angelbird
+Apacer
+Apotop
+Asura
+Asus
+Avexir
+Axiom
+Biostar
+Biwin
+Centon
+Corsair
+Crucial
+Dell
+Drevo
+Edge Tech
+Eluktro
+Eluktronics
+Enmotus
+G.Skill
+Gigabyte
+Hitachi
+HP
+Hyundai Technology
+IBM
+Inland
+Integral
+Intel
+Intenso
+KFA2
+KingDian
+Kingston
+KIOXIA
+Klevv
+LaCie
+Lenovo
+Lexar
+Maxtor
+Micron
+MSI
+Mushkin
+MyDigitalSSD
+Neo Forza
+OCZ
+OWC
+Patriot
+Pioneer
+PLDS
+Plextor
+PNY
+QNAP
+Sabrent
+Samsung
+SanDisk
+Seagate
+Silicon Power
+SK Hynix
+Sony
+Super Talent
+Supermicro
+Synology
+TCSunBow
+TEAMGROUP
+Timetec
+Toshiba
+Transcend
+V7
+Verbatim
+VisionTek
+Water Panther
+Western Digital
+Wintec
+XPG
+YMTC
+Zalman
+Zotac
