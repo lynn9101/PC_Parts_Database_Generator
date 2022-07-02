@@ -1,0 +1,81 @@
+ADATA
+Aerocool
+aigo
+Akasa
+Alpenföhn
+Alphacool
+Antec
+Apacer
+ARCTIC
+ARESGAME
+Asus
+Azza
+be quiet!
+Cooler Master
+Cooltek
+Corsair
+Cougar
+CRYORIG
+darkFlash
+Deepcool
+Dynatron
+EK
+Enermax
+Enzotech
+Evercool
+EVGA
+Fractal Design
+FSP Group
+GAMDIAS
+GameMax
+Gelid Solutions
+Gigabyte
+Iceberg Thermal
+ID-COOLING
+In Win
+Intel
+Jonsbo
+LEPA
+Lian Li
+Logisys
+Masscool
+Montech
+MSI
+Nexus
+Noctua
+NoFan
+NZXT
+OcUK
+PC Cooler
+Phanteks
+Phononic
+Prolimatech
+Raidmax
+RAIJINTEK
+Razer
+Reeven
+RIOTORO
+ROCCAT
+Rosewill
+Scythe
+SilentiumPC
+SilenX
+Silverstone
+StarTech
+Sunbeam
+Swiftech
+Syba
+Tempest
+Thermalright
+Thermaltake
+Titan
+TUNIQ
+upHere
+Vantec
+Vetroo
+X2
+Xigmatek
+Xion
+Zalman
+Zero Infinity
+ZEROtherm
