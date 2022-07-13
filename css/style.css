@@ -6,7 +6,6 @@
 }
 
 .container {
-    border: 1px solid red;
     width: 95%;
     margin: 0 auto;
     padding: 1%;  
@@ -30,7 +29,6 @@
 
 /* Header Section */
 .logo {
-    border: 1px solid blue;
     width: 20%;
     float: left;
 }
@@ -61,19 +59,18 @@
 /* Banner Section */
 .banner {
     background-color: #B9B9B9;
-    padding: 0 0;
+    padding: 2% 0;
 }
 
 .banner-contain {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1% 0;
 }
 
 .banner-left {
-    border: 1px solid blue;
     float: left;
+    padding: 0 30% 0 0;
 }
 
 .banner-left h1 {
@@ -96,6 +93,7 @@
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 30px;
+    box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.3);
     transition: .1s ease;  
 }
 
@@ -106,7 +104,6 @@
 }
 
 .banner-right {
-    border: 1px solid green;
     width: 30%;
     height: 40%;
 }
