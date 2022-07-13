@@ -1,0 +1,113 @@
+/* Define CSS for all pages */
+* {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    border: 1px solid red;
+    width: 95%;
+    margin: 0 auto;
+    padding: 1%;  
+}
+
+.img-contain{
+    width: 100%;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+
+.clearfix {
+    clear: both;
+    float: none; /*clear space from other section*/
+}
+
+/* Header Section */
+.logo {
+    border: 1px solid blue;
+    width: 20%;
+    float: left;
+}
+
+.menu {
+    line-height: 35px;
+}
+
+.menu ul {
+    list-style-type: none; /* remove the dots in front of list*/
+}
+
+.menu ul li {
+    display: inline;
+    padding: 3%; /*create space between the options*/
+    font-weight: bold;
+}
+
+.menu ul li a {
+    color: #0575CC;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: #868686;
+}
+
+/* Banner Section */
+.banner {
+    background-color: #B9B9B9;
+    padding: 0 0;
+}
+
+.banner-contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0;
+}
+
+.banner-left {
+    border: 1px solid blue;
+    float: left;
+}
+
+.banner-left h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: center;
+    color: black;
+}
+
+.banner-left .cta {
+    display: inline-block;
+    padding: 13px 25px;
+    color: black;
+    background-color: #00CEC9;
+    border: 5px solid #00CEC9;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transition: .1s ease;  
+}
+
+.banner-left .cta:hover {
+    color: white;
+    background-color: #00a9a6;
+    border: 5px solid #00a9a6;
+}
+
+.banner-right {
+    border: 1px solid green;
+    width: 30%;
+    height: 40%;
+}
+
