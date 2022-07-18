@@ -1,0 +1,95 @@
+/* Define CSS for all pages */
+* {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 1%;  
+}
+
+.img-contain{
+    width: 100%;
+}
+.img-curve {
+    border-radius: 10px;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+
+.clearfix {
+    clear: both;
+    float: none; /*clear space from other section*/
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+/* Header Section */
+.logo {
+    width: 20%;
+    float: left;
+}
+
+.menu {
+    line-height: 35px;
+}
+
+.menu ul {
+    list-style-type: none; /* remove the dots in front of list*/
+}
+
+.menu ul li {
+    display: inline;
+    padding: 3%; /*create space between the options*/
+    font-weight: bold;
+}
+
+.menu ul li a {
+    color: #0575CC;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: #868686;
+}
+
+/* Banner Section */
+.product-banner {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    min-height: 250px;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 2%;
+    left: 5%;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #A49AEC;
+    padding: 1% 0;
+}
+
+.footer-text{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
