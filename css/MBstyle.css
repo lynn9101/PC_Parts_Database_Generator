@@ -42,35 +42,6 @@ h3{
     padding-left: 12px;
 }
 
-/* Header Section */
-.logo {
-    width: 20%;
-    float: left;
-}
-
-.menu {
-    line-height: 35px;
-}
-
-.menu ul {
-    list-style-type: none; /* remove the dots in front of list*/
-}
-
-.menu ul li {
-    display: inline;
-    padding: 3%; /*create space between the options*/
-    font-weight: bold;
-}
-
-.menu ul li a {
-    color: #0575CC;
-    text-decoration: none;
-}
-
-.menu ul li a:hover {
-    color: #868686;
-}
-
 /* Banner Section */
 .product-banner {
     background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
@@ -133,16 +104,4 @@ th {
 
 tr:nth-child(odd) {
     background-color: #ececec;
-}
-
-/* Footer Section */
-.footer {
-    background-color: #A49AEC;
-    padding: 1% 0;
-}
-
-.footer-text{
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
 }
