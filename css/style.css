@@ -44,35 +44,6 @@ h3 {
     text-align: center;
 }
 
-/* Header Section */
-.logo {
-    width: 20%;
-    float: left;
-}
-
-.menu {
-    line-height: 35px;
-}
-
-.menu ul {
-    list-style-type: none; /* remove the dots in front of list*/
-}
-
-.menu ul li {
-    display: inline;
-    padding: 3%; /*create space between the options*/
-    font-weight: bold;
-}
-
-.menu ul li a {
-    color: #0575CC;
-    text-decoration: none;
-}
-
-.menu ul li a:hover {
-    color: #868686;
-}
-
 /* Banner Section */
 .banner {
     background-color: #B9B9B9;
@@ -142,16 +113,4 @@ h3 {
 
 .product-title {
     padding: 3% 0;
-}
-
-/* Footer Section */
-.footer {
-    background-color: #A49AEC;
-    padding: 1% 0;
-}
-
-.footer-text{
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
 }
