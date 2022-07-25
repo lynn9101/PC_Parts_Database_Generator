@@ -18,22 +18,62 @@ h1{
     background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
     background-repeat: no-repeat;
     background-size: 100%, 100%;
-    min-height: 75px;
+    min-height: 50px;
     position: relative;
 }
 
 .banner-text {
     position: absolute;
-    bottom: 2%;
+    bottom: 10%;
     left: 5%;
 }
 
 /* Main Content */
 .main-content {
     padding: auto;
-
+    padding-top: 15vh;
+    padding-bottom: 15vh;
 }
 
 .input {
     display: flex;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+td {
+    text-align: left;
+    padding-bottom: 20px;
+    padding-right: 40px;
+    padding-left: 30px;
+}
+
+td input {
+    min-height: 20px;
+    min-width: 300px;
+    background-color: #c0c0c0;
+    border-radius: 2px;
+    /*font color*/
+    color: white;
+    /*adjust spacing around text inside box*/
+    padding: 5px;
+    padding-left: 10px;
+    /*active selection color*/
+    outline-color: white;
+}
+
+input {
+    min-width: 125px;
+    min-height: 27.5px;
+    color: white;
+    background-color: #00CEC9;
+    border: 0;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: white;
 }
