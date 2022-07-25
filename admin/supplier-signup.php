@@ -62,7 +62,7 @@
         $sql = "INSERT INTO manufacturer_supplies SET
                 name='$supplier_name',
                 contactinfo='$contact_info',
-                address='address',
+                address='$address',
                 password='$password'";
 
         // Execute query
