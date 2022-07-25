@@ -14,27 +14,7 @@
                         <td>Choose Category to Add Model: </td>
                         <td>
                             <select name="category">
-                                <?php
-                                    // Get all category names
-                                    $sql = "SELECT * FROM categories";
-                                    $conn = OpenCon();
-                                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
-                                    $numRows = mysqli_num_rows($result);
-                                    if ($numRows > 0) {
-                                        // Get the details of that supplier
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            $id = $row['id'];
-                                            $title = $row['title'];
-                                            ?>
-
-                                            <option value="<?php echo $id; ?>"><?php echo $title; ?></option>
-
-                                            <?php
-                                        }
-                                    }
-                
-                                ?>
+                                <option value="1">Motherboard</option>
                             </select>
                         </td>
                     </tr>
@@ -58,28 +38,7 @@
                         <td>Choose Category to Manage: </td>
                         <td>
                             <select name="category_2">
-                                <?php
-                                    // Get all category names
-                                    $sql = "SELECT * FROM categories";
-                                    $conn = OpenCon();
-                                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
-                                    $numRows = mysqli_num_rows($result);
-                                    if ($numRows > 0) {
-                                        // Get the details of that supplier
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            $id = $row['id'];
-                                            $title = $row['title'];
-                                            ?>
-
-                                            <option value="<?php echo $id; ?>"><?php echo $title; ?></option>
-
-                                            <?php
-                                        }
-
-                                    }
-                
-                                ?>
+                                <option value="1">Motherboard</option>
                             </select>
                         </td>
                     </tr>
@@ -94,16 +53,16 @@
                 <!-- Manage Button clicked -->
                 <?php
                     if (isset($_POST['submit-add'])) {
-                        //echo $category_id = $_POST['category'];
-
+                        $category_id = $_POST['category'];
+                        header("location: http://localhost/pc_parts_database_generator/admin/add-MB.php");
                         
                     }
 
                     if (isset($_POST['submit-manage'])) {
-                        //echo $category_id_2 = $_POST['category_2'];
+                        $category_id_2 = $_POST['category_2'];
+                        header("location: http://localhost/pc_parts_database_generator/admin/manage-MB.php");
                     }
                 ?>
-                
             </div>
         </section>
         <!-- End Main Content Section -->
