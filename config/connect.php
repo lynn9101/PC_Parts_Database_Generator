@@ -1,19 +1,22 @@
 <?php
-function OpenCon()
-{
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "root";
-    $db = "pc_components_tracker";
+    function OpenCon()
+    {
+        session_start();
+        $home_page_url = "http://localhost/pc_parts_database_generator/";
 
-    $conn = new mysqli($dbhost, $dbuser, 
-    $dbpass,$db) or die("Connect failed: %s\n". 
-    $conn -> error);
-    return $conn;
-}
+        $dbhost = "localhost";
+        $dbuser = "root";
+        $dbpass = "root";
+        $db = "pc_components_tracker";
 
-function CloseCon($conn)
-{
-    $conn -> close();
-}
+        $conn = new mysqli($dbhost, $dbuser, 
+        $dbpass,$db) or die("Connect failed: %s\n". 
+        $conn -> error);
+        return $conn;
+    }
+
+    function CloseCon($conn)
+    {
+        $conn -> close();
+    }
 ?>

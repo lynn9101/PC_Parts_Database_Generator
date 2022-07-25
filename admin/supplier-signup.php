@@ -71,9 +71,15 @@
 
         // Check if the query is excecuted properly
         if ($result == TRUE) {
-            echo 'Data inserted';
+            $_SESSION['add'] = "New Supplier Added Successfully";
+
+            // Redirect to previous page
+            header("location:".$home_page_url.'suppliers-list.php');
         } else {
-            echo 'Failed to insert data';
+            $_SESSION['add'] = "Falied to Add New Supplier";
+
+            // Redirect to previous page
+            header("location:".$home_page_url.'supplier-signup.php');
         }
     }
 ?>

@@ -19,38 +19,42 @@
                         <th>Action</th>
                     </tr>
 
-                    <tr>
-                        <td>1</td>
-                        <td>Lynn Nguyen</td>
-                        <td>lynnng@gmail.com</td>
-                        <td>Vancouver BC</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Supplier</a>
-                            <a href="#" class="btn-danger">Delete Supplier</a>
-                        </td>
-                    </tr>
+                    <?php
+                        // Query to get all suppliers in the database
+                        $sql = "SELECT * FROM manufacturer_supplies";
+                        $conn = OpenCon();
+                        $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-                    <tr>
-                        <td>2</td>
-                        <td>Lynn Nguyen</td>
-                        <td>lynnng@gmail.com</td>
-                        <td>Vancouver BC</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Supplier</a>
-                            <a href="#" class="btn-danger">Delete Supplier</a>
-                        </td>
-                    </tr>
+                        if ($result == TRUE) {
+                            // Count the number of rows needed in the table
+                            $numRows = mysqli_num_rows($result);
 
-                    <tr>
-                        <td>3</td>
-                        <td>Lynn Nguyen</td>
-                        <td>lynnng@gmail.com</td>
-                        <td>Vancouver BC</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Supplier</a>
-                            <a href="#" class="btn-danger">Delete Supplier</a>
-                        </td>
-                    </tr>
+                            if ($numRows > 0) {
+                                while ($rows = mysqli_fetch_assoc($result)) {
+                                    // Get data from each row
+                                    $supplier_id = $rows['id'];
+                                    $name = $rows['name'];
+                                    $contact_info = $rows['contactinfo'];
+                                    $address = $rows['address'];
+                                    ?>
+
+                                    <tr>
+                                        <td><?php echo $supplier_id; ?></td>
+                                        <td><?php echo $name; ?></td>
+                                        <td><?php echo $contact_info; ?></td>
+                                        <td><?php echo $address; ?></td>
+                                        <td>
+                                            <a href="#" class="btn-secondary">Update Supplier</a>
+                                            <a href="#" class="btn-danger">Delete Supplier</a>
+                                        </td>
+                                    </tr>
+
+                                    <?php
+                                }
+                            }
+                        }
+                    ?>
+
                 </table>
                 
             </div>
