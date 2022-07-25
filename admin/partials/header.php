@@ -29,8 +29,13 @@
                         <li>
                             <a href="suppliers-list.php">Suppliers</a>
                         </li>
+
                         <li>
-                            <a href="#">Components</a>
+                            <a href="categories-list.php">Categories</a>
+                        </li>
+
+                        <li>
+                            <a href="add-component.php">Component</a>
                         </li>
                         <li>
                             <a href="orders-list.php">Orders</a>
