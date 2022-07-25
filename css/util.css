@@ -27,6 +27,16 @@
     color: #868686;
 }
 
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 1%;  
+}
+
+.text-right {
+    text-align: right;
+}
+
 /* Footer Section */
 .footer {
     background-color: #A49AEC;

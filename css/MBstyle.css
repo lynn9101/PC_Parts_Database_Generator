@@ -1,0 +1,107 @@
+/* Define CSS for all pages */
+* {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 1%;  
+}
+
+.img-contain{
+    width: 100%;
+}
+.img-curve {
+    border-radius: 10px;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+
+.clearfix {
+    clear: both;
+    float: none; /*clear space from other section*/
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+h3{
+    padding-left: 12px;
+}
+
+/* Banner Section */
+.product-banner {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    min-height: 250px;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 2%;
+    left: 5%;
+}
+
+/* Main Content */
+
+.main-content {
+    display: flex;
+}
+
+/* Filter Selection Section */
+.filter-selection {
+    width: 20%;
+    padding-top: 36px;
+    background-color: #d9d9d9;
+}
+
+.filter {
+    display: flex;
+    padding: 8px;
+    padding-left: 8px;
+    border-bottom: 1px solid #b9b9b9;
+}
+
+/* Results Section */
+.results-section {
+    width: 80%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    min-height: 80vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+td, th {
+    font-size: 0.25 rem;
+    border: 2px solid #8a8a8a;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #c2c2c2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ececec;
+}
