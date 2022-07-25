@@ -1,0 +1,39 @@
+/* Define CSS for all pages */
+* {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Banner Section */
+.page-banner {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    min-height: 75px;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 2%;
+    left: 5%;
+}
+
+/* Main Content */
+.main-content {
+    padding: auto;
+
+}
+
+.input {
+    display: flex;
+}
