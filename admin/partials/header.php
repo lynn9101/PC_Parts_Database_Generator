@@ -27,7 +27,7 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="suppliers-list.php">Supplier</a>
+                            <a href="suppliers-list.php">Suppliers</a>
                         </li>
                         <li>
                             <a href="#">Components</a>
