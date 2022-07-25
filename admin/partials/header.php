@@ -1,3 +1,5 @@
+<?php include('../config/connect.php'); ?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -25,7 +27,7 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="admin-list.php">Admin</a>
+                            <a href="suppliers-list.php">Supplier</a>
                         </li>
                         <li>
                             <a href="#">Components</a>

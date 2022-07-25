@@ -4,47 +4,51 @@
         <!-- Include header, add button, table of admins -->
         <section class="main-content">
             <div class="container">
-                <h1 class="main-title text-left">Adminstration</h1>
+                <h1 class="main-title text-left">Manage Suppliers</h1>
 
                 <!-- Add button for new Admin -->
-                <a href="admin-signup.php" class="btn-primary">Add New Admin</a>
+                <a href="supplier-signup.php" class="btn-primary">Add New Supplier</a>
                 
                 <table class="admin-table">
                     <tr>
                         <!-- Table Heading -->
-                        <th>Admin ID</th>
-                        <th>Username</th>
-                        <th>Fullname</th>
+                        <th>Supplier ID</th>
+                        <th>Name</th>
+                        <th>Contact Information</th>
+                        <th>Address</th>
                         <th>Action</th>
                     </tr>
 
                     <tr>
                         <td>1</td>
                         <td>Lynn Nguyen</td>
-                        <td>lynnng</td>
+                        <td>lynnng@gmail.com</td>
+                        <td>Vancouver BC</td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
+                            <a href="#" class="btn-secondary">Update Supplier</a>
+                            <a href="#" class="btn-danger">Delete Supplier</a>
                         </td>
                     </tr>
 
                     <tr>
                         <td>2</td>
                         <td>Lynn Nguyen</td>
-                        <td>lynnng</td>
+                        <td>lynnng@gmail.com</td>
+                        <td>Vancouver BC</td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
+                            <a href="#" class="btn-secondary">Update Supplier</a>
+                            <a href="#" class="btn-danger">Delete Supplier</a>
                         </td>
                     </tr>
 
                     <tr>
                         <td>3</td>
                         <td>Lynn Nguyen</td>
-                        <td>lynnng</td>
+                        <td>lynnng@gmail.com</td>
+                        <td>Vancouver BC</td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
+                            <a href="#" class="btn-secondary">Update Supplier</a>
+                            <a href="#" class="btn-danger">Delete Supplier</a>
                         </td>
                     </tr>
                 </table>
