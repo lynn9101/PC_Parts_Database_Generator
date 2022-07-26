@@ -7,7 +7,6 @@
         
         <title>Admin Home Page - PC Components Tracker</title>
        
-        <link rel="stylesheet" href="../css/newModel.css">
         <link rel="stylesheet" href="../css/admin.css">
         <link rel="stylesheet" href="../css/util.css">
         
