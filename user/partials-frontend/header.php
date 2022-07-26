@@ -7,6 +7,7 @@
         
         <title>Home Page - PC Components Tracker</title>
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/MBstyle.css">
         <link rel="stylesheet" href="../css/util.css">
     </head>
 
@@ -24,13 +25,11 @@
                 <div class="menu text-right">
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
+                        
                         <li>
-                            <a href="#">Components</a>
-                        </li>
-                        <li>
-                            <a href="#">Log In</a>
+                            <a href="#">Admin Login</a>
                         </li>
                     </ul>
                 </div>

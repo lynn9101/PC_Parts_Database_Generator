@@ -6,7 +6,7 @@
                 <div class="banner-left">
                     <h1>BUILD YOUR</h1>
                     <h1>DREAM PC</h1>
-                    <a href="#" type="button" class="cta">Explore More</a>
+                    <a href="#products" type="button" class="cta">Explore More</a>
                 </div>
 
                 <div class="banner-right">
@@ -17,32 +17,32 @@
         <!-- End Banner Section -->
 
         <!-- Main Product Section -->
-        <section class="main-product">
+        <section class="main-product" id="products">
             <div class="container">
                 <h2 class="main-title text-center">Our Products</h2>
 
                 <div class="component-box">
                     <img src="../images/motherboard-logo.png" alt="Motherboard" class="img-contain img-curve">
 
-                    <h3 class="product-title">Motherboard</h3>
+                    <h3 class="product-title"><a href="../user/MBpage.php">Motherboard</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/memory-logo.png" alt="Memory" class="img-contain img-curve">
 
-                    <h3 class="product-title">Memory</h3>
+                    <h3 class="product-title"><a href="#">Memory</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/storage-logo.png" alt="Storage" class="img-contain img-curve">
 
-                    <h3 class="product-title">Storage</h3>
+                    <h3 class="product-title"><a href="#">Storage</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/cooling-logo.png" alt="Cooling" class="img-contain img-curve">
 
-                    <h3 class="product-title">Cooling System</h3>
+                    <h3 class="product-title"><a href="#">Cooling System</a></h3>
                 </div>
                 
                 <div class="clearfix"></div>
@@ -50,25 +50,25 @@
                 <div class="component-box">
                     <img src="../images/cpu-logo.png" alt="Cpu" class="img-contain img-curve">
 
-                    <h3 class="product-title">Central Processing Unit</h3>
+                    <h3 class="product-title"><a href="#">Central Processing Unit</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/gpu-logo.png" alt="Gpu" class="img-contain img-curve">
 
-                    <h3 class="product-title">Graphics Card</h3>
+                    <h3 class="product-title"><a href="#">Graphics Card</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/case-logo.png" alt="Case" class="img-contain img-curve">
 
-                    <h3 class="product-title">Case</h3>
+                    <h3 class="product-title"><a href="#">Case</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/power-supply-logo.png" alt="Power Supply" class="img-contain img-curve">
 
-                    <h3 class="product-title">Power Supply</h3>
+                    <h3 class="product-title"><a href="#">Power Supply</a></h3>
                 </div>
                
                 <div class="clearfix"></div>
