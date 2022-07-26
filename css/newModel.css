@@ -5,12 +5,15 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
-    color: white;
+.img-contain{
+    width: 100%;
+}
+.img-curve {
+    border-radius: 10px;
 }
 
-h2{
-    margin-bottom: 30px;
+.banner-text h1{
+    color: white;
 }
 
 .text-center {
@@ -22,7 +25,7 @@ h2{
     background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
     background-repeat: no-repeat;
     background-size: 100%, 100%;
-    min-height: 50px;
+    min-height: 100px;
     position: relative;
 }
 
@@ -33,29 +36,35 @@ h2{
 }
 
 /* Main Content */
-.main-content {
+.form-content {
     padding: auto;
     padding-top: 15vh;
     padding-bottom: 15vh;
 }
 
-.input {
+.activity-title {
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.form-content .input {
     display: flex;
 }
 
-table {
+.form-content table {
     margin-right: auto;
     margin-left: auto;
 }
 
-td {
+.form-content td {
     text-align: left;
     padding-bottom: 20px;
     padding-right: 40px;
     padding-left: 30px;
 }
 
-td input {
+.form-content td input {
     min-height: 20px;
     min-width: 300px;
     background-color: #c0c0c0;
@@ -69,7 +78,7 @@ td input {
     outline-color: white;
 }
 
-input {
+.form-content input {
     min-width: 125px;
     min-height: 27.5px;
     color: white;
@@ -78,6 +87,6 @@ input {
     border-radius: 5px;
 }
 
-input::placeholder {
+.form-content input::placeholder {
     color: white;
 }

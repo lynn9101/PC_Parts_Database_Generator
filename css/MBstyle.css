@@ -33,13 +33,13 @@
     float: none; /*clear space from other section*/
 }
 
-h1 {
+.product-banner-text h1 {
     color: white;
     font-size: 2.5rem;
 }
 
-h3{
-    padding-left: 20px;
+.filter h3{
+    padding-left: 12px;
 }
 
 /* Banner Section */
@@ -51,7 +51,7 @@ h3{
     position: relative;
 }
 
-.banner-text {
+.product-banner-text {
     position: absolute;
     bottom: 2%;
     left: 5%;
@@ -59,7 +59,7 @@ h3{
 
 /* Main Content */
 
-.main-content {
+.product-main-content {
     display: flex;
 }
 
@@ -85,23 +85,23 @@ h3{
     min-height: 80vh;
 }
 
-table {
+.results-section table {
     border-collapse: collapse;
     width: 80%;
     margin: auto;
 }
 
-td, th {
+.results-section td, th {
     font-size: 0.25 rem;
     border: 2px solid #8a8a8a;
     text-align: left;
     padding: 8px;
 }
 
-th {
+.results-section th {
     background-color: #c2c2c2;
 }
 
-tr:nth-child(odd) {
+.results-section tr:nth-child(odd) {
     background-color: #ececec;
 }

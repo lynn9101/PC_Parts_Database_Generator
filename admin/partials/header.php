@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <title>Admin Home Page - PC Components Tracker</title>
+       
         <link rel="stylesheet" href="../css/admin.css">
         <link rel="stylesheet" href="../css/util.css">
+        
     </head>
 
     <body>
@@ -27,10 +29,15 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="suppliers-list.php">Supplier</a>
+                            <a href="suppliers-list.php">Suppliers</a>
                         </li>
+
                         <li>
-                            <a href="#">Components</a>
+                            <a href="categories-list.php">Categories</a>
+                        </li>
+
+                        <li>
+                            <a href="add-component.php">Component</a>
                         </li>
                         <li>
                             <a href="orders-list.php">Orders</a>

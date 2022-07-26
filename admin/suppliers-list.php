@@ -44,8 +44,9 @@
                                         <td><?php echo $contact_info; ?></td>
                                         <td><?php echo $address; ?></td>
                                         <td>
-                                            <a href="#" class="btn-secondary">Update Supplier</a>
-                                            <a href="#" class="btn-danger">Delete Supplier</a>
+                                            <a href="../admin/update-supplier.php?id=<?php echo $supplier_id; ?>" class="btn-secondary">Update Supplier</a>
+                                            <!-- ?id= the id of supplier that we need to pass into another page -->
+                                            <a href="../admin/delete-supplier.php?id=<?php echo $supplier_id; ?>" class="btn-danger">Delete Supplier</a>
                                         </td>
                                     </tr>
 
