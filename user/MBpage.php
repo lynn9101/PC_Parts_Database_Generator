@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Motherboards</title>
-    <link rel="stylesheet" href="../css/MBstyle.css">
-    <link rel="stylesheet" href="../css/util.css">
-</head>
-
-<body>
-    <!-- Header Section -->
-    <!-- Includes Logo and Menu Options-->
-    <section class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="../images/header-logo.png" alt="Website Logo" class="img-contain">
-                </a>
-            </div>
-
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Components</a>
-                    </li>
-                    <li>
-                        <a href="#">Log In</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    <!-- End Header Section -->
+<?php include('partials-frontend/header.php'); ?>
 
     <!-- Banner Section -->
     <div class="product-banner">
@@ -95,12 +56,4 @@
     </section>
     <!-- End Main Content Section -->
 
-    <!-- Footer Section -->
-    <section class="footer">
-        <div class="container text-center">
-            <p class="footer-text">2022 All rights reserved, PC Components Tracker. Designed by Group 1</p>
-        </div>
-    </section>
-    <!-- End Footer Section -->
-</body>
-</html>
+<?php include('partials-frontend/footer.php'); ?>
