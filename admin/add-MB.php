@@ -1,15 +1,5 @@
-<?php include('../config/connect.php'); ?>
+<?php include('partials/header.php'); ?>
 
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/newModel.css">
-    <link rel="stylesheet" href="../css/util.css">
-</head>
-<body>
         <!-- Banner Section -->
         <div class="page-banner">
             <div class="banner-text">
@@ -19,7 +9,7 @@
         <!-- End Banner Section -->
 
         <!--Main Content Section-->
-        <section class="main-content text-center">
+        <section class="form-content text-center">
             <h2 class="activity-title">
                 NEW MODEL
             </h2>

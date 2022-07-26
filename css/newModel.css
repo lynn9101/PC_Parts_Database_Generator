@@ -5,7 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
+.banner-text h1{
     color: white;
 }
 
@@ -29,7 +29,7 @@ h1{
 }
 
 /* Main Content */
-.main-content {
+.form-content {
     padding: auto;
     padding-top: 15vh;
     padding-bottom: 15vh;
@@ -41,23 +41,23 @@ h1{
     font-size: 1.5rem;
 }
 
-.input {
+.form-content .input {
     display: flex;
 }
 
-table {
+.form-content table {
     margin-right: auto;
     margin-left: auto;
 }
 
-td {
+.form-content td {
     text-align: left;
     padding-bottom: 20px;
     padding-right: 40px;
     padding-left: 30px;
 }
 
-td input {
+.form-content td input {
     min-height: 20px;
     min-width: 300px;
     background-color: #c0c0c0;
@@ -71,7 +71,7 @@ td input {
     outline-color: white;
 }
 
-input {
+.form-content input {
     min-width: 125px;
     min-height: 27.5px;
     color: white;
@@ -80,6 +80,6 @@ input {
     border-radius: 5px;
 }
 
-input::placeholder {
+.form-content input::placeholder {
     color: white;
 }

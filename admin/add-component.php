@@ -45,7 +45,7 @@
                     
                     <!-- Add a Confirm button -->
                     <tr>
-                        <td><input type="submit" name="submit-manage" value="Manage List" class="btn-secondary"></td>
+                        <td><input type="submit" name="submit-manage" value="Manage List" class="btn-secondary btn-outline"></td>
                     </tr>
                 </table>
                 </form>

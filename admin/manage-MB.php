@@ -10,16 +10,53 @@
 </head>
 
 <body>
+    <!-- Header Section -->
+    <!-- Include Logo and Menu Option-->
+    <section class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="../images/header-logo.png" alt="Website Logo" class="img-contain">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="suppliers-list.php">Suppliers</a>
+                    </li>
+
+                    <li>
+                        <a href="categories-list.php">Categories</a>
+                    </li>
+
+                    <li>
+                        <a href="add-component.php">Component</a>
+                    </li>
+                    <li>
+                        <a href="orders-list.php">Orders</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- End Header Section -->
+
     <!-- Banner Section -->
     <div class="product-banner">
-        <div class="banner-text">
+        <div class="product-banner-text">
             <h1>Motherboard</h1>
         </div>
     </div>
     <!-- End Banner Section -->
 
     <!-- Main Content Section -->
-    <section class="main-content">
+    <section class="product-main-content">
         <div class="filter-selection">
             <div class="filter">
                 <h3>></h3>
@@ -38,6 +75,7 @@
                 <h3>Memory Size</h3>
             </div>
         </div>
+        
         <div class="results-section">
             <table>
                 <tr>
