@@ -5,6 +5,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.img-contain{
+    width: 100%;
+}
+.img-curve {
+    border-radius: 10px;
+}
+
 .banner-text h1{
     color: white;
 }
