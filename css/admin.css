@@ -1,0 +1,145 @@
+/* Define CSS for all pages */
+* {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 1%;  
+}
+
+.img-contain{
+    width: 100%;
+}
+.img-curve {
+    border-radius: 10px;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+
+.clearfix {
+    clear: both;
+    float: none; /*clear space from other section*/
+}
+
+h2 {
+    color: #2d3436;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #636E72;
+    text-align: center;
+}
+
+/* Header Section */
+
+
+/* Main Content Section */
+.main-content {
+    padding: 2%;
+    background-color: #ced6e0;
+}
+
+.main-title {
+    margin-bottom: 30px;
+}
+
+.dashboard-box {
+    width: 18%;     /* width of each box in dashboard */
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+/* Admin Table Section - admin-list.php*/
+table tr th {
+    border-bottom: 1px solid black;
+    padding: 1%;
+}
+
+table tr td {
+    padding: 1%;
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #0575CC;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+}
+.btn-primary:hover {
+    background-color: #1e90ff;
+}
+
+.btn-secondary {
+    background-color: #00b894;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+}
+.btn-secondary:hover {
+    background-color: #2fd7a8;
+}
+
+.btn-danger {
+    background-color: #ff4757;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+}
+.btn-danger:hover {
+    background-color: #ff6b81;
+}
+
+/* Admin Signup Section - admin-signup.php */
+/* Banner Section */
+.banner {
+    background-color: #B9B9B9;
+    padding: 2% 0;
+}
+
+.banner-contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-left {
+    float: left;
+    padding: 0 30% 0 0;
+}
+
+.banner-left h1 {
+    display: block;
+    width: fit-content;
+    font-size: 3rem;
+    position: center;
+    color: black;
+}
+
+.banner-right {
+    width: 30%;
+    height: 40%;
+}
+
+.table-container {
+    width: 100%;
+}
