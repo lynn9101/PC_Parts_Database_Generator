@@ -24,25 +24,25 @@
                 <div class="component-box">
                     <img src="../images/motherboard-logo.png" alt="Motherboard" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="../user/MBpage.php">Motherboard</a></h3>
+                    <h3 class="product-title"><a href="../user/MBPage.php">Motherboard</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/memory-logo.png" alt="Memory" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="#">Memory</a></h3>
+                    <h3 class="product-title"><a href="../user/MemoryPage.php">Memory</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/storage-logo.png" alt="Storage" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="#">Storage</a></h3>
+                    <h3 class="product-title"><a href="../user/StoragePage.html">Storage</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/cooling-logo.png" alt="Cooling" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="#">Cooling System</a></h3>
+                    <h3 class="product-title"><a href="../user/CoolingPage.html">Cooling System</a></h3>
                 </div>
                 
                 <div class="clearfix"></div>
@@ -50,25 +50,25 @@
                 <div class="component-box">
                     <img src="../images/cpu-logo.png" alt="Cpu" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="#">Central Processing Unit</a></h3>
+                    <h3 class="product-title"><a href="../user/CPUPage.html">Central Processing Unit</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/gpu-logo.png" alt="Gpu" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="#">Graphics Card</a></h3>
+                    <h3 class="product-title"><a href="../user/GPUPage.html">Graphics Card</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/case-logo.png" alt="Case" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="#">Case</a></h3>
+                    <h3 class="product-title"><a href="../user/CasePage.html">Case</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/power-supply-logo.png" alt="Power Supply" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="#">Power Supply</a></h3>
+                    <h3 class="product-title"><a href="../user/PSUPage.html">Power Supply</a></h3>
                 </div>
                
                 <div class="clearfix"></div>
