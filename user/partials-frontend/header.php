@@ -1,15 +1,14 @@
-<?php include('../config/connect.php'); ?>
-
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title>Admin Home Page - PC Components Tracker</title>
-       
-        <link rel="stylesheet" href="../css/admin.css">
+        <title>Home Page - PC Components Tracker</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/MBstyle.css">
         <link rel="stylesheet" href="../css/util.css">
-        
     </head>
 
     <body>
@@ -28,19 +27,9 @@
                         <li>
                             <a href="index.php">Home</a>
                         </li>
+                        
                         <li>
-                            <a href="suppliers-list.php">Suppliers</a>
-                        </li>
-
-                        <li>
-                            <a href="categories-list.php">Categories</a>
-                        </li>
-
-                        <li>
-                            <a href="add-component.php">Component</a>
-                        </li>
-                        <li>
-                            <a href="orders-list.php">Orders</a>
+                            <a href="#">Admin Login</a>
                         </li>
                     </ul>
                 </div>

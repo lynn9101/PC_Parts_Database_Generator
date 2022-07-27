@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/newModel.css">
-    <link rel="stylesheet" href="../css/util.css">
-</head>
-<body>
-    <!-- Header Section -->
+<?php include('../config/connect.php'); ?>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Admin Home Page - PC Components Tracker</title>
+       
+        <link rel="stylesheet" href="../css/newModel.css">
+        <link rel="stylesheet" href="../css/util.css">
+        
+    </head>
+
+    <body>
+        <!-- Header Section -->
         <!-- Include Logo and Menu Option-->
         <section class="header">
             <div class="container">
@@ -22,13 +26,21 @@
                 <div class="menu text-right">
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="#">Components</a>
+                            <a href="suppliers-list.php">Suppliers</a>
+                        </li>
+
+                        <li>
+                            <a href="categories-list.php">Categories</a>
+                        </li>
+
+                        <li>
+                            <a href="add-component.php">Component</a>
                         </li>
                         <li>
-                            <a href="#">Log In</a>
+                            <a href="orders-list.php">Orders</a>
                         </li>
                     </ul>
                 </div>
@@ -47,7 +59,7 @@
         <!-- End Banner Section -->
 
         <!--Main Content Section-->
-        <section class="main-content text-center">
+        <section class="form-content text-center">
             <h2 class="activity-title">
                 NEW MODEL
             </h2>
@@ -80,13 +92,5 @@
             </form>
         </section>
         <!--End Main Content Section-->
-        
-        <!-- Footer Section -->
-        <section class="footer">
-            <div class="container text-center">
-                <p class="footer-text">2022 All rights reserved, PC Components Tracker. Designed by Group 1</p>
-            </div>
-        </section>
-        <!-- End Footer Section -->
-</body>
-</html>
+
+<?php include('partials/footer.php'); ?>

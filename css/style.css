@@ -39,7 +39,7 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
+.component-box h3 {
     color: #636E72;
     text-align: center;
 }
@@ -112,5 +112,16 @@ h3 {
 }
 
 .product-title {
-    padding: 3% 0;
+    padding: 4% 0;
+    font-size: 1.5rem;
 }
+
+.product-title a {
+    color: #636E72;
+    text-decoration: none;
+}
+
+.product-title a:hover {
+    color: #00b6b3;
+}
+
