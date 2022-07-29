@@ -36,13 +36,13 @@
                 <div class="component-box">
                     <img src="../images/storage-logo.png" alt="Storage" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="../user/StoragePage.html">Storage</a></h3>
+                    <h3 class="product-title"><a href="../user/StoragePage.php">Storage</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/cooling-logo.png" alt="Cooling" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="../user/CoolingPage.html">Cooling System</a></h3>
+                    <h3 class="product-title"><a href="../user/CoolingPage.php">Cooling System</a></h3>
                 </div>
                 
                 <div class="clearfix"></div>
@@ -50,25 +50,25 @@
                 <div class="component-box">
                     <img src="../images/cpu-logo.png" alt="Cpu" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="../user/CPUPage.html">Central Processing Unit</a></h3>
+                    <h3 class="product-title"><a href="../user/CPUPage.php">Central Processing Unit</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/gpu-logo.png" alt="Gpu" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="../user/GPUPage.html">Graphics Card</a></h3>
+                    <h3 class="product-title"><a href="../user/GPUPage.php">Graphics Card</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/case-logo.png" alt="Case" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="../user/CasePage.html">Case</a></h3>
+                    <h3 class="product-title"><a href="../user/CasePage.php">Case</a></h3>
                 </div>
 
                 <div class="component-box">
                     <img src="../images/power-supply-logo.png" alt="Power Supply" class="img-contain img-curve">
 
-                    <h3 class="product-title"><a href="../user/PSUPage.html">Power Supply</a></h3>
+                    <h3 class="product-title"><a href="../user/PSUPage.php">Power Supply</a></h3>
                 </div>
                
                 <div class="clearfix"></div>
