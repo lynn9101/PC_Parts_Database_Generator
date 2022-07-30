@@ -1,7 +1,7 @@
 from Util import extractArray
 
 MANUFACTURERS = extractArray("Manufacturers")
-MANUFACTURERS += extractArray("StorageManufacturers")
+MANUFACTURERS += extractArray("MemManufacture")
 
 x = 0
 mSet = set()
