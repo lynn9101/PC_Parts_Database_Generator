@@ -1,3 +1,5 @@
+<?php include('../config/connect.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -29,7 +31,7 @@
                         </li>
                         
                         <li>
-                            <a href="supplier-login">Admin Login</a>
+                            <a href="supplier-login.php">Admin Login</a>
                         </li>
                     </ul>
                 </div>
