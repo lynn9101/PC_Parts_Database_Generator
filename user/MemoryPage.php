@@ -33,18 +33,39 @@
                     <th>Speed</th>
                     <th>Form Factor</th>
                 </tr>
-                <tr>
-                    <td>712</td>
-                    <td>16GB</td>
-                    <td>3600MHz</td>
-                    <td>Desktop</td>
-                </tr>
-                <tr>
-                    <td>878</td>
-                    <td>8GB</td>
-                    <td>3200MHz</td>
-                    <td>Laptop</td>
-                </tr>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT m1.partid id, m1.formfactor ff, m2.sizeGB size, m2.speed 
+                    FROM memory1 m1, memory2 m2 
+                    WHERE m1.partid = m2.partid";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $id = $rows['id'];
+                                $ff = $rows['ff'];
+                                $size = $rows['size'];
+                                $speed = $rows['speed'];
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $id; ?></td>
+                                    <td><?php echo $size; ?>GB</td>
+                                    <td><?php echo $speed; ?></td>
+                                    <td><?php echo $ff; ?></td>
+                                </tr>
+
+                                <?php
+                            }
+                        }
+                    }
+                ?>
             </table>
         </div>
     </section>
