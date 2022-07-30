@@ -40,32 +40,65 @@
         <div class="results-section">
             <table>
                 <tr>
-                    <th>Part ID</th>
                     <th>Model</th>
                     <th>Memory Size</th>
                     <th>Memory Type</th>
                     <th>Boost Clock</th>
                     <th>Core Clock</th>
                     <th>Integrated/Dedicated</th>
+                    <th>CPU</th>
                 </tr>
-                <tr>
-                    <td>712385479</td>
-                    <td>Black</td>
-                    <td>15Db</td>
-                    <td>Intel</td>
-                    <td>10</td>
-                    <td>10</td>
-                    <td>Dedicated</td>
-                </tr>
-                <tr>
-                    <td>8782348</td>
-                    <td>Black</td>
-                    <td>15Db</td>
-                    <td>Intel</td>
-                    <td>10</td>
-                    <td>10</td>
-                    <td>Dedicated</td>
-                </tr>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT g1.model, g1.memorytype memtype, g1.boostclock boost, g1.coreclock core, 
+                    g3.memorysizeGB memsize, g2.integrated, cpu.brandname cpu 
+                    FROM gpu_contains1 g1 
+                    INNER JOIN gpu_contains3 g3
+                    ON g1.gpuid = g3.gpuid
+                    INNER JOIN gpu_contains2 g2
+                    ON g2.cpuid = g3.cpuid
+                    INNER JOIN cpu
+                    ON cpu.partid = g3.cpuid";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $model = $rows['model'];
+                                $memSize = $rows['memsize'];
+                                $memType = $rows['memtype'];
+                                $boost = $rows['boost'];
+                                $core = $rows['core'];
+                                $integrated = $rows['integrated'];
+                                $cpu = $rows['cpu'];
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $model; ?></td>
+                                    <td><?php echo $memSize; ?>GB</td>
+                                    <td><?php echo $memType; ?></td>
+                                    <td><?php echo $boost; ?>MHz</td>
+                                    <td><?php echo $core; ?>MHz</td>
+                                    <td><?php 
+                                        if($integrated == 1){
+                                            echo "Integrated";
+                                        } else{
+                                            echo "Dedicated";
+                                        }
+                                    ?></td>
+                                    <td><?php echo $cpu; ?></td>
+                                </tr>
+
+                                <?php
+                            }
+                        }
+                    }
+                ?>
             </table>
         </div>
     </section>
