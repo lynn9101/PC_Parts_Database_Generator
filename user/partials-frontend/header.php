@@ -29,7 +29,7 @@
                         </li>
                         
                         <li>
-                            <a href="#">Admin Login</a>
+                            <a href="supplier-login">Admin Login</a>
                         </li>
                     </ul>
                 </div>
