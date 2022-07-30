@@ -54,7 +54,7 @@
                 <?php
                     if (isset($_POST['submit-add'])) {
                         $category_id = $_POST['category'];
-                        header("location: http://localhost/pc_parts_database_generator/admin/add-MB.php");
+                        header("location: http://localhost/pc_parts_database_generator/admin/add-models/add-MB.php");
                         
                     }
 
