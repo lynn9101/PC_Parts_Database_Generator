@@ -32,16 +32,37 @@
                     <th>Colour</th>
                     <th>Noise Level</th>
                 </tr>
-                <tr>
-                    <td>712385479</td>
-                    <td>Black</td>
-                    <td>15Db</td>
-                </tr>
-                <tr>
-                    <td>8782348</td>
-                    <td>Blue</td>
-                    <td>24.5Db</td>
-                </tr>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT c1.modelname model, c1.noiseleveldB noise, c2.colour 
+                    FROM coolingsystem1 c1, coolingsystem2 c2 
+                    WHERE c1.modelname = c2.modelname";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $model = $rows['model'];
+                                $noise = $rows['noise'];
+                                $color = $rows['colour'];
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $model; ?></td>
+                                    <td><?php echo $color; ?></td>
+                                    <td><?php echo $noise; ?>dB</td>
+                                </tr>
+
+                                <?php
+                            }
+                        }
+                    }
+                ?>
             </table>
         </div>
     </section>
