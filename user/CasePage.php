@@ -32,16 +32,35 @@
                     <th>Colour</th>
                     <th>Form Factor</th>
                 </tr>
-                <tr>
-                    <td>H510</td>
-                    <td>Black</td>
-                    <td>Full ATX</td>
-                </tr>
-                <tr>
-                    <td>H570 Pro</td>
-                    <td>White</td>
-                    <td>Micro ATX</td>
-                </tr>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT c1.modelname model, c1.formfactor ff, c2.colour color FROM case1 c1, case2 c2 WHERE c1.modelname = c2.modelname";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $model = $rows['model'];
+                                $color = $rows['color'];
+                                $ff = $rows['ff'];
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $model; ?></td>
+                                    <td><?php echo $color; ?></td>
+                                    <td><?php echo $ff; ?></td>
+                                </tr>
+
+                                <?php
+                            }
+                        }
+                    }
+                ?>
             </table>
         </div>
     </section>
