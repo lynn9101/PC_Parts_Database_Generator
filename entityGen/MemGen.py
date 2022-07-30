@@ -4,6 +4,8 @@ from Util import genNum
 from Util import genStr
 
 FORMFACTORS = extractArray("MemFormFactors")
+MANUFACTURER = extractArray("MemManufacture")
+MODEL = extractArray("MemModels")
 ENTRIES = 25
 
 partIDs = genNumArr(1, 1000, 1, True, ENTRIES)
@@ -19,14 +21,21 @@ while len(memSpeeds) < ENTRIES:
 
 sizes = genNumArr(0, 7, 1, False, ENTRIES)
 
+modelNames = []
+while len(modelNames) < ENTRIES:
+    manufacturer = genStr(MANUFACTURER)
+    model = genStr(MODEL)
+    modelName = manufacturer + " " + model + " " + str(pow(2, sizes[len(modelNames)])) + " GB"
+    modelNames.append(modelName)
+
 formFactors = []
 while len(formFactors) < ENTRIES:
     formFactors.append(genStr(FORMFACTORS))
 
-output = "Memory part ID,speed,memory size,form factor\n"
+output = "Memory part ID, Model Name,speed,memory size,form factor\n"
 x = 0
 while x < ENTRIES:
-    output += str(partIDs[x]) + "," + memSpeeds[x] + "," + str(pow(2, sizes[x])) + " GB," + formFactors[x] + "\n"
+    output += str(partIDs[x]) + "," + modelNames[x] + "," + memSpeeds[x] + "," + str(pow(2, sizes[x])) + " GB," + formFactors[x] + "\n"
     x += 1
 
 outFile = open("./generatedOutput/MemGen.csv", "w")
