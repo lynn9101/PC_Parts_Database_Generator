@@ -2,6 +2,7 @@
 
     <!-- Banner Section -->
     <div class="product-banner">
+        <img src="../images/motherboard wallpaper.jpg" class="cropped">
         <div class="product-banner-text">
             <h1>Motherboard</h1>
         </div>
