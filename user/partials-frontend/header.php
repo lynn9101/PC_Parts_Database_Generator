@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include('../config/connect.php'); ?>
+
 <html>
     <head>
         <meta charset="UTF-8">
