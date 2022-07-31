@@ -144,14 +144,6 @@ table tr td {
     width: 100%;
 }
 
-.table-container tr td ul li a {
-    color: black;
-    text-decoration: none;  /* remove underline */
-}
-
-.table-container tr td ul li a:hover {
-    color: #868686;
-}
 
 /*currently only under use by the add-component.php page*/
 .product-banner {
@@ -236,4 +228,12 @@ table tr td {
     height: 40px;
     font-size: 1.2em;
     margin-bottom: 10px;
+}
+
+:disabled {
+    background-color: grey;
+}
+
+:disabled:hover {
+    background-color: darkgrey;
 }
