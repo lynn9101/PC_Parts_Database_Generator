@@ -5,7 +5,7 @@
         <!-- Banner Section -->
         <div class="page-banner">
             <div class="banner-text">
-                <h1>Motherboard</h1>
+                <h1>Power Supply</h1>
             </div>
         </div>
         <!-- End Banner Section -->
@@ -18,24 +18,26 @@
             <form action="" method="POST">
                 <table>
                     <tr>
-                        <td>ID</td>
-                        <td><input required type="number" name="id" placeholder="enter model ID"></td>
+                        <td>Model Name</td>
+                        <td><input required type="text" name="model" placeholder="enter model name"></td>
                     </tr>
                     <tr>
-                        <td>Form Factor</td>
-                        <td><input required type="text" name="form_factor" placeholder="enter model Form Factor"></td>
+                        <td>Watts</td>
+                        <td><input required type="number" name="watts" placeholder="enter the number in Watts"></td>
                     </tr>
                     <tr>
-                        <td>Chipset</td>
-                        <td><input required type="text" name="chipset" placeholder="enter model chipset"></td>
+                        <td>Modularity</td>
+                        <td>
+                            <select name="modularity">
+                                <option value="1">No</option>
+                                <option value="2">Semi</option>
+                                <option value="3">Full</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Memory Slots</td>
-                        <td><input required type="number" name="memory_slots" placeholder="enter model memory slots"></td>
-                    </tr>
-                    <tr>
-                        <td>Supported Memory Size</td>
-                        <td><input required type="number" name="memory_size" placeholder="enter model supported memory size"></td>
+                        <td>Model Colour</td>
+                        <td><input required type="text" name="colour" placeholder="enter colour of model"></td>
                     </tr>
                 </table>
                 <!--confirm button-->

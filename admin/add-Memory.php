@@ -5,7 +5,7 @@
         <!-- Banner Section -->
         <div class="page-banner">
             <div class="banner-text">
-                <h1>Motherboard</h1>
+                <h1>Memory</h1>
             </div>
         </div>
         <!-- End Banner Section -->
@@ -22,20 +22,16 @@
                         <td><input required type="number" name="id" placeholder="enter model ID"></td>
                     </tr>
                     <tr>
+                        <td>Memory Size</td>
+                        <td><input required type="text" name="size" placeholder="enter memory size (e.g. 12GB)"></td>
+                    </tr>
+                    <tr>
+                        <td>Memory Speed</td>
+                        <td><input required type="text" name="speed" placeholder="enter memory speed (e.g. 3600MHz)"></td>
+                    </tr>
+                    <tr>
                         <td>Form Factor</td>
                         <td><input required type="text" name="form_factor" placeholder="enter model Form Factor"></td>
-                    </tr>
-                    <tr>
-                        <td>Chipset</td>
-                        <td><input required type="text" name="chipset" placeholder="enter model chipset"></td>
-                    </tr>
-                    <tr>
-                        <td>Memory Slots</td>
-                        <td><input required type="number" name="memory_slots" placeholder="enter model memory slots"></td>
-                    </tr>
-                    <tr>
-                        <td>Supported Memory Size</td>
-                        <td><input required type="number" name="memory_size" placeholder="enter model supported memory size"></td>
                     </tr>
                 </table>
                 <!--confirm button-->

@@ -5,7 +5,7 @@
         <!-- Banner Section -->
         <div class="page-banner">
             <div class="banner-text">
-                <h1>Motherboard</h1>
+                <h1>CPU</h1>
             </div>
         </div>
         <!-- End Banner Section -->
@@ -22,20 +22,16 @@
                         <td><input required type="number" name="id" placeholder="enter model ID"></td>
                     </tr>
                     <tr>
-                        <td>Form Factor</td>
-                        <td><input required type="text" name="form_factor" placeholder="enter model Form Factor"></td>
+                        <td>Model Name</td>
+                        <td><input required type="text" name="model_name" placeholder="enter model name"></td>
                     </tr>
                     <tr>
-                        <td>Chipset</td>
-                        <td><input required type="text" name="chipset" placeholder="enter model chipset"></td>
+                        <td>Number of Cores</td>
+                        <td><input required type="text" name="cores_number" placeholder="enter the number of cores in model"></td>
                     </tr>
                     <tr>
-                        <td>Memory Slots</td>
-                        <td><input required type="number" name="memory_slots" placeholder="enter model memory slots"></td>
-                    </tr>
-                    <tr>
-                        <td>Supported Memory Size</td>
-                        <td><input required type="number" name="memory_size" placeholder="enter model supported memory size"></td>
+                        <td>Core Speed</td>
+                        <td><input required type="number" name="core_speed" placeholder="enter model core clock speed in GHz"></td>
                     </tr>
                 </table>
                 <!--confirm button-->

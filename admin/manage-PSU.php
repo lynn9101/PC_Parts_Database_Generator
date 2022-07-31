@@ -2,9 +2,9 @@
 
     <!-- Banner Section -->
     <div class="product-banner">
-        <img src="../images/motherboard wallpaper.jpg" class="banner-img">
+        <img src="../images/power supply wallpaper.jpg" class="banner-img">
         <div class="product-banner-text">
-            <h1>Motherboard</h1>
+            <h1>Power Supply</h1>
         </div>
     </div>
     <!-- End Banner Section -->
@@ -14,39 +14,34 @@
         <div class="filter-selection">
             <div class="filter">
                 <h3>></h3>
-                <h3>Form Factor</h3>
+                <h3>Model Name</h3>
             </div>
             <div class="filter">
                 <h3>></h3>
-                <h3>Chipset</h3>
+                <h3>Colour</h3>
             </div>
             <div class="filter">
                 <h3>></h3>
-                <h3>Memory Slots</h3>
+                <h3>Watts</h3>
             </div>
             <div class="filter">
                 <h3>></h3>
-                <h3>Memory Size</h3>
+                <h3>Modularity</h3>
             </div>
         </div>
         
         <div class="results-section">
             <table>
                 <tr>
-                    <th>Chipset</th>
-                    <th>Form Factor</th>
-                    <th>Memory Slots</th>
-                    <th>Supported<br/>Memory Size</th>
+                    <th>Model name</th>
+                    <th>Watts</th>
+                    <th>Modularity</th>
+                    <th>Colour</th>
                     <th>Action</th>
                 </tr>
                 <?php
                     // Query to get all suppliers in the database
-                    $sql = "SELECT m2.chipset, m1.formfactor ff, m3.memoryslots memslots, m1.supportedmemorysize memsize
-                    FROM motherboard2 m2 
-                    INNER JOIN motherboard3 m3
-                    ON m2.id = m3.id
-                    INNER JOIN motherboard1 m1
-                    ON m2.formfactor = m1.formfactor";
+                    $sql = "SELECT p1.modelname model, p1.watts watts, p1.modularity modularity, p2.colour color FROM powersupply1 p1, powersupply2 p2 WHERE p1.modelname = p2.modelname";
                     $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
@@ -57,17 +52,17 @@
                         if ($numRows > 0) {
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
-                                $chipset = $rows['chipset'];
-                                $ff = $rows['ff'];
-                                $memslots = $rows['memslots'];
-                                $memsize = $rows['memsize'];
+                                $model = $rows['model'];
+                                $watts = $rows['watts'];
+                                $modularity = $rows['modularity'];
+                                $color = $rows['color'];
                                 ?>
 
                                 <tr>
-                                    <td><?php echo $chipset; ?></td>
-                                    <td><?php echo $ff; ?></td>
-                                    <td><?php echo $memslots; ?></td>
-                                    <td><?php echo $memsize; ?>GB</td>
+                                    <td><?php echo $model; ?></td>
+                                    <td><?php echo $watts; ?>W</td>
+                                    <td><?php echo $modularity; ?></td>
+                                    <td><?php echo $color; ?></td>
 
                                     <td>
                                         <a href="#" class="btn-secondary">Update</a>
@@ -86,4 +81,4 @@
     </section>
     <!-- End Main Content Section -->
 
-<?php include('partials/footer.php'); ?>
+<?php include('partials-frontend/footer.php'); ?>

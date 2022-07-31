@@ -19,7 +19,7 @@
 }
 
 .menu ul li a {
-    color: #0575CC;
+    color: #0768b2;
     text-decoration: none;  /* remove underline */
 }
 
@@ -35,6 +35,25 @@
 
 .text-right {
     text-align: right;
+}
+
+.btn-secondary {
+    background-color: #00b894;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+}
+.btn-secondary:hover {
+    background-color: #2fd7a8;
+}
+.btn-danger {
+    background-color: #ff4757;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+}
+.btn-danger:hover {
+    background-color: #ff6b81;
 }
 
 /* Footer Section */

@@ -29,7 +29,6 @@
         <div class="results-section">
             <table>
                 <tr>
-                    <th>ID</th>
                     <th>Size</th>
                     <th>Speed</th>
                     <th>Form Factor</th>
@@ -56,7 +55,6 @@
                                 ?>
 
                                 <tr>
-                                    <td><?php echo $id; ?></td>
                                     <td><?php echo $size; ?>GB</td>
                                     <td><?php echo $speed; ?></td>
                                     <td><?php echo $ff; ?></td>
@@ -72,4 +70,4 @@
     </section>
     <!-- End Main Content Section -->
 
-<?php include('partials-frontend/footer.php'); ?>
+<?php include('partials/footer.php'); ?>
