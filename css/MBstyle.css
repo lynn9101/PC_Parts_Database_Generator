@@ -44,17 +44,23 @@
 
 /* Banner Section */
 .product-banner {
-    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
-    background-repeat: no-repeat;
-    background-size: 100%, 100%;
-    min-height: 250px;
+    height: 250px;
+    overflow: hidden;
     position: relative;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -100%;
 }
 
 .product-banner-text {
     position: absolute;
     bottom: 2%;
     left: 5%;
+    text-shadow: 1px 1px 5px black;
 }
 
 /* Main Content */

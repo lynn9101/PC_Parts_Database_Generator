@@ -2,6 +2,7 @@
 
     <!-- Banner Section -->
     <div class="product-banner">
+        <img src="../images/CPU wallpaper.jpg" class="banner-img">
         <div class="product-banner-text">
             <h1>CPU</h1>
         </div>

@@ -2,6 +2,7 @@
 
     <!-- Banner Section -->
     <div class="product-banner">
+        <img src="../images/case wallpaper.jpg" class="banner-img">
         <div class="product-banner-text">
             <h1>Case</h1>
         </div>
