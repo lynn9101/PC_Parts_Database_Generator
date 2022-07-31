@@ -2,6 +2,7 @@
 
     <!-- Banner Section -->
     <div class="product-banner">
+        <img src="../images/cooling system wallpaper.jpg" class="banner-img">
         <div class="product-banner-text">
             <h1>Cooling</h1>
         </div>
