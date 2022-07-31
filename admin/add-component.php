@@ -1,70 +1,55 @@
 <?php include('partials/header.php'); ?>
+<script src="component-manage.js" defer></script>
+
+        <!-- Banner Section -->
+        <div class="product-banner">
+                <img src="../images/components wallpaper.jpg" class="banner-img">
+                <div class="product-banner-text">
+                    <h1>Components Dashboard</h1>
+                </div>
+            </div>
+        <!-- End Banner Section -->
 
         <!-- Main Content Section -->
-        <!-- Include header, add button, table of admins -->
-        <section class="main-content">
-            <div class="container">
-                <h1 class="main-title text-left">Add New Component by Category</h1>
-
+        <div class="main-section">
+            <div class="visual-display central-align">
+                <img src="../images/components wallpaper.jpg" class="visual-banner" id="visual">
+                <div class="current-selection-text text-center" id="selection-label">
+                    None
+                </div>
+            </div>
+            <div class="selection-container central-align">
                 <form action="" method="POST">
-
-                <table class="table-container">
-                    <!-- Drop down list to choose category -->
-                    <tr>
-                        <td>Choose Category to Add Model: </td>
-                        <td>
-                            <select name="category">
-                                <option value="1">Motherboard</option>
-                            </select>
-                        </td>
-                    </tr>
-                    
-                    <!-- Add a Confirm button -->
-                    <tr>
-                        <td><input type="submit" name="submit-add" value="Add New Model" class="btn-primary"></td>
-                    </tr>
-                </table>
+                <select name="category" class="selection" id="selection">
+                    <option value="0">None</option>
+                    <option value="1">Motherboard</option>
+                    <option value="2">Memory</option>
+                    <option value="3">Storage</option>
+                    <option value="4">Cooling System</option>
+                    <option value="5">Central Processing Unit</option>
+                    <option value="6">Graphics Card</option>
+                    <option value="7">Case</option>
+                    <option value="8">Power Supply</option>
+                </select>
+                
+                <input type="submit" name="submit-add" value="Add" class="btn-secondary btn" id="btn">
+                <input type="submit" name="submit-manage" value="Edit" class="btn-primary btn" id="btn2">
                 </form>
 
-                <!-- Section 2: Manage the List of Components -->
-                <br><br><br>
-                <h1 class="main-title text-left">Manage List of Components by Category</h1>
-
-                <form action="" method="POST">
-
-                <table class="table-container">
-                    <!-- Drop down list to choose category -->
-                    <tr>
-                        <td>Choose Category to Manage: </td>
-                        <td>
-                            <select name="category_2">
-                                <option value="1">Motherboard</option>
-                            </select>
-                        </td>
-                    </tr>
-                    
-                    <!-- Add a Confirm button -->
-                    <tr>
-                        <td><input type="submit" name="submit-manage" value="Manage List" class="btn-secondary btn-outline"></td>
-                    </tr>
-                </table>
-                </form>
-
-                <!-- Manage Button clicked -->
+                <!--the array has been provided with filler variables. replace once pages are ready-->
                 <?php
+                    $addPages = ["None", "add-MB", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component"];
+                    $editPages = ["None", "manage-MB", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component"];
                     if (isset($_POST['submit-add'])) {
-                        $category_id = $_POST['category'];
-                        header("location: http://localhost/pc_parts_database_generator/admin/add-MB.php");
-                        
-                    }
-
-                    if (isset($_POST['submit-manage'])) {
-                        $category_id_2 = $_POST['category_2'];
-                        header("location: http://localhost/pc_parts_database_generator/admin/manage-MB.php");
+                        $id = $_POST['category'];
+                        header("location: http://localhost/pc_parts_database_generator/admin/{$addPages[$id]}.php");
+                    } elseif (isset($_POST['submit-manage'])) {
+                        $id = $_POST['category'];
+                        header("location: http://localhost/pc_parts_database_generator/admin/{$editPages[$id]}.php");
                     }
                 ?>
             </div>
-        </section>
+        </div>
         <!-- End Main Content Section -->
 
 <?php include('partials/footer.php'); ?>
