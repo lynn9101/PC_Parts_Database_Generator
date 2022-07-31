@@ -15,6 +15,7 @@
                         <td>
                             <select name="category">
                                 <option value="1">Motherboard</option>
+                                <option value="2">Motherboard</option>
                             </select>
                         </td>
                     </tr>
@@ -54,8 +55,9 @@
                 <?php
                     if (isset($_POST['submit-add'])) {
                         $category_id = $_POST['category'];
-                        header("location: http://localhost/pc_parts_database_generator/admin/add-MB.php");
-                        
+                        if ($category_id == 1) {
+                            header("location: http://localhost/pc_parts_database_generator/admin/add-MB.php");
+                        }
                     }
 
                     if (isset($_POST['submit-manage'])) {
