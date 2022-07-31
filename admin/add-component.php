@@ -38,8 +38,8 @@
 
                 <!--the array has been provided with filler variables. replace once pages are ready-->
                 <?php
-                    $addPages = ["None", "add-MB", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component"];
-                    $editPages = ["None", "manage-MB", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component"];
+                    $addPages = ["None", "add-MB", "add-Memory", "add-Storage", "add-Cooling", "add-CPU", "add-GPU", "add-Case", "add-PSU"];
+                    $editPages = ["None", "manage-MB", "manage-Memory", "manage-Storage", "manage-Cooling", "manage-CPU", "manage-GPU", "manage-Case", "manage-PSU"];
                     if (isset($_POST['submit-add'])) {
                         $id = $_POST['category'];
                         header("location: http://localhost/pc_parts_database_generator/admin/{$addPages[$id]}.php");
