@@ -1,5 +1,7 @@
 <?php include('../config/connect.php'); ?>
 
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
         <meta charset="UTF-8">
@@ -29,7 +31,7 @@
                         </li>
                         
                         <li>
-                            <a href="#">Admin Login</a>
+                            <a href="supplier-login.php">Admin Login</a>
                         </li>
                     </ul>
                 </div>

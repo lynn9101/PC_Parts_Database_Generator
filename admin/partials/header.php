@@ -1,4 +1,6 @@
-<?php include('../config/connect.php'); ?>
+<?php 
+    include('../config/connect.php'); 
+?>
 
 <html>
     <head>
@@ -41,6 +43,10 @@
                         </li>
                         <li>
                             <a href="orders-list.php">Orders</a>
+                        </li>
+
+                        <li>
+                            <a href="supplier-logout.php">Logout</a>
                         </li>
                     </ul>
                 </div>
