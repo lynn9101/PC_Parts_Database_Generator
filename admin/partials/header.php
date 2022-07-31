@@ -44,7 +44,6 @@
                         <li>
                             <a href="orders-list.php">Orders</a>
                         </li>
-
                         <li>
                             <a href="supplier-logout.php">Logout</a>
                         </li>
