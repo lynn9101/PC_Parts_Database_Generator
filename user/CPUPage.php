@@ -53,7 +53,7 @@
                                 <tr>
                                     <td><?php echo $model; ?></td>
                                     <td><?php echo $cores; ?></td>
-                                    <td><?php echo $core_speed; ?>Db</td>
+                                    <td><?php echo $core_speed; ?>GHz</td>
                                 </tr>
 
                                 <?php

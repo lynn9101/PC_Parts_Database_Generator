@@ -58,7 +58,7 @@
 
                                 <tr>
                                     <td><?php echo $model; ?></td>
-                                    <td><?php echo $watts; ?></td>
+                                    <td><?php echo $watts; ?>W</td>
                                     <td><?php echo $modularity; ?></td>
                                     <td><?php echo $color; ?></td>
                                 </tr>
