@@ -35,7 +35,10 @@
                 </tr>
                 <?php
                     // Query to get all suppliers in the database
-                    $sql = "SELECT c1.modelname model, c1.formfactor ff, c2.colour color FROM case1 c1, case2 c2 WHERE c1.modelname = c2.modelname";
+                    $sql = "SELECT c1.modelname model, c1.formfactor ff, c2.colour color 
+                    FROM case1 c1
+                    INNER JOIN case2 c2
+                    ON c1.modelname = c2.modelname";
                     $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
