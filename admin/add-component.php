@@ -13,9 +13,9 @@
         <!-- Main Content Section -->
         <div class="main-section">
             <div class="visual-display central-align">
-                <img src="../images/components wallpaper.jpg" class="visual-banner">
-                <div class="current-selection-text text-center">
-                    Current Selection
+                <img src="../images/components wallpaper.jpg" class="visual-banner" id="visual">
+                <div class="current-selection-text text-center" id="selection-label">
+                    None
                 </div>
             </div>
             <div class="selection-container central-align">
@@ -32,21 +32,20 @@
                     <option value="8">Power Supply</option>
                 </select>
                 
-                <input type="submit" name="submit-add" value="Add" class="btn-secondary btn">
-                <input type="submit" name="submit-manage" value="Edit" class="btn-primary btn">
+                <input type="submit" name="submit-add" value="Add" class="btn-secondary btn" id="btn">
+                <input type="submit" name="submit-manage" value="Edit" class="btn-primary btn" id="btn2">
                 </form>
 
+                <!--the array has been provided with filler variables. replace once pages are ready-->
                 <?php
+                    $addPages = ["None", "add-MB", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component"];
+                    $editPages = ["None", "manage-MB", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component", "add-component"];
                     if (isset($_POST['submit-add'])) {
                         $id = $_POST['category'];
-                        if ($id == 1) {
-                            header("location: http://localhost/pc_parts_database_generator/admin/add-MB.php");
-                        }
+                        header("location: http://localhost/pc_parts_database_generator/admin/{$addPages[$id]}.php");
                     } elseif (isset($_POST['submit-manage'])) {
                         $id = $_POST['category'];
-                        if ($id == 1) {
-                            header("location: http://localhost/pc_parts_database_generator/admin/manage-MB.php");
-                        }
+                        header("location: http://localhost/pc_parts_database_generator/admin/{$editPages[$id]}.php");
                     }
                 ?>
             </div>

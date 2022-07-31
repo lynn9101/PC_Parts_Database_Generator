@@ -229,3 +229,11 @@ table tr td {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
+
+:disabled {
+    background-color: grey;
+}
+
+:disabled:hover {
+    background-color: darkgrey;
+}
