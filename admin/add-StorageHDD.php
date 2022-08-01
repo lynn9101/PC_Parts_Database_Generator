@@ -119,7 +119,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Form Factor</td>
+                        <td>RPM</td>
                         <td>
                             <?php
                                 if ($type == 'add') {
