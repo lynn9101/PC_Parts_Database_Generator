@@ -84,9 +84,12 @@
     border-top: 2px solid #b9b9b9;
 }
 
-.filter-item {
-    padding: 5px;
-    padding-left: 40px;
+.filter-dropdown {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: 15%;
+    height: 25px;
 }
 
 .confirm-section {
