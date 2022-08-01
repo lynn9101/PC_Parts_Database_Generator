@@ -52,7 +52,7 @@
                 </tr>
                 <?php
                     // Query to get all suppliers in the database
-                    $sql = "SELECT g1.model, g1.memorytype memtype, g1.boostclock boost, g1.coreclock core, 
+                    $sql = "SELECT g1.gpuid, g1.model, g1.memorytype memtype, g1.boostclock boost, g1.coreclock core, 
                     g3.memorysizeGB memsize, g2.integrated, cpu.brandname cpu 
                     FROM gpu_contains1 g1 
                     INNER JOIN gpu_contains3 g3
@@ -71,6 +71,7 @@
                         if ($numRows > 0) {
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
+                                $id = $rows['gpuid'];
                                 $model = $rows['model'];
                                 $memSize = $rows['memsize'];
                                 $memType = $rows['memtype'];
@@ -98,7 +99,7 @@
                                     <td>
                                         <a href="#" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
-                                        <a href="#" class="btn-danger">Delete</a>
+                                        <a href="../admin/delete/delete-GPU.php?id=<?php echo $id; ?>&model=<?php echo $model; ?>" class="btn-danger">Delete</a>
                                     </td>
                                 </tr>
 
