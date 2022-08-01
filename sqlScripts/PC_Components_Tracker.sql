@@ -1,7 +1,7 @@
 CREATE TABLE Motherboard1
 (formfactor CHAR(50) NOT NULL,
 supportedmemorysize INT NOT NULL,
-PRIMARY KEY (formfactor) );
+PRIMARY KEY (formfactor, supportedmemorysize) );
 
 CREATE TABLE Motherboard2
 (id INT NOT NULL,
