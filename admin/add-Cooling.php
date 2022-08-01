@@ -38,3 +38,12 @@
         <!--End Main Content Section-->
 
 <?php include('partials/footer.php'); ?>
+<?php
+    ob_start();
+    // Check whether the confirm button is clicked or not
+    if (isset($_POST['submit'])) {
+        // Get the data from the form
+        $model = $_POST['model'];
+        $colour = $_POST['colour'];
+        $noise_level = $_POST['noise_level'];
+    }

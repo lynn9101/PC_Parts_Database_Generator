@@ -144,7 +144,7 @@
 <?php include('partials/footer.php'); ?>
 <?php
     ob_start();
-    // Check whether the confirm button is clicked or nor
+    // Check whether the confirm button is clicked or not
     if (isset($_POST['submit'])) {
         // Get the data from the form
         $id = $_POST['id'];
