@@ -47,7 +47,6 @@
             <div class="filter">
                 <h3>Watts</h3>
             </div>
-
             <?php
                 // Query to get all suppliers in the database
                 $sql = "SELECT MIN(watts) min, MAX(watts) max
@@ -67,6 +66,7 @@
                     }
                 }
             ?>
+            <br>
             <label for="min-w">min:</label>
             <input type="number" name="min-w" min=<?php echo $min;?> min=<?php echo $max;?> value=<?php echo $min;?>>
             <br>
