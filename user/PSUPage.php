@@ -72,7 +72,7 @@
             <br>
             <label for="max-w">max:</label>
             <input type="number" name="max-w" min=<?php echo $min;?> min=<?php echo $max;?> value=<?php echo $max;?>>
-            <p class="text-center">(min: <?php echo $min;?> max: <?php echo $max;?>)</p>
+            <p class="text-center range-text">(min: <?php echo $min;?> max: <?php echo $max;?>)</p>
 
             <div class="filter">
                 <h3>Modularity</h3>
