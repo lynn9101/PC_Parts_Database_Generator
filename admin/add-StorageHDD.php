@@ -76,7 +76,7 @@
                             <?php
                                 if ($type == 'add') {
                                     ?>
-                                    <input required type="number" name="storage_size" placeholder="enter model storage size in TB">
+                                    <input required type="number" name="storage_size" placeholder="enter model storage size in GB">
                                     <?php
                                 } else {
                                     ?>
