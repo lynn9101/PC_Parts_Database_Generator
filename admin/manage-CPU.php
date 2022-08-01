@@ -74,4 +74,4 @@
     </section>
     <!-- End Main Content Section -->
 
-<?php include('partials/manage-footer.php'); ?>
+<?php include('partials/footer.php'); ?>

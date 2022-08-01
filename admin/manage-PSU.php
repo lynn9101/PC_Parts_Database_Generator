@@ -81,4 +81,4 @@
     </section>
     <!-- End Main Content Section -->
 
-<?php include('partials-frontend/footer.php'); ?>
+<?php include('partials/footer.php'); ?>

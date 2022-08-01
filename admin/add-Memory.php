@@ -22,8 +22,12 @@
                         <td><input required type="number" name="id" placeholder="enter model ID"></td>
                     </tr>
                     <tr>
+                        <td>Model Name</td>
+                        <td><input required type="text" name="model" placeholder="enter model name"></td>
+                    </tr>
+                    <tr>
                         <td>Memory Size</td>
-                        <td><input required type="text" name="size" placeholder="enter memory size (e.g. 12GB)"></td>
+                        <td><input required type="number" name="size" placeholder="enter memory size in GB"></td>
                     </tr>
                     <tr>
                         <td>Memory Speed</td>
@@ -42,3 +46,32 @@
         <!--End Main Content Section-->
 
 <?php include('partials/footer.php'); ?>
+<?php
+    ob_start();
+    // Check whether the confirm button is clicked or nor
+    if (isset($_POST['submit'])) {
+        // Get the data from the form
+        $id = $_POST['id'];
+        $model = $_POST['model'];
+        $size = $_POST['size'];
+        $speed = $_POST['speed'];
+        $form_factor = $_POST['form_factor'];
+        // Create the SQL queries
+        $sql2 = "INSERT INTO Memory1 VALUES ($id,'$form_factor')";
+        $sql3 = "INSERT INTO Memory2 VALUES ($id,'$model',$size,'$speed')";
+        $conn = OpenCon();
+        $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+        $result3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
+        // Insert data into database
+        if ($result2 == TRUE && $result3 == TRUE) {
+            // Redirect to previous page
+            if (!headers_sent()) {
+                header("location: http://localhost/pc_parts_database_generator/admin/add-component.php");
+            }
+            ob_end_flush();
+        } else {
+            // Redirect to previous page
+            header("location: http://localhost/pc_parts_database_generator/admin/add-Memory.php");
+        }
+    }
+?>
