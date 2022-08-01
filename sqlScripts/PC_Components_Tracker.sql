@@ -73,7 +73,8 @@ CREATE TABLE HDDStorage3
 (storagesizeGB INT NOT NULL,
 model CHAR(100) NOT NULL,
 PRIMARY KEY (storagesizeGB, model),
-FOREIGN KEY (model) REFERENCES HDDStorage2(model) );
+FOREIGN KEY (model) REFERENCES HDDStorage2(model)
+    ON UPDATE CASCADE );
 
 CREATE TABLE GPU_Contains1
 (gpuid INT NOT NULL,
@@ -155,6 +156,14 @@ orderid INT NOT NULL,
 PRIMARY KEY (userid, orderid),
 FOREIGN KEY (userid) REFERENCES User1(userid) );
 
+CREATE TABLE manufacturer_supplies
+(id INT NOT NULL AUTO_INCREMENT,
+ name CHAR(20) NOT NULL,
+ contactinto CHAR(50) NOT NULL,
+ address CHAR(100) NOT NULL,
+ password CHAR(100) NOT NULL,
+ PRIMARY KEY (id));
+
 CREATE TABLE Manufacturer_Supplies1
 (name CHAR(20) NOT NULL,
 contactinfo CHAR(50) NOT NULL,
@@ -174,3 +183,8 @@ userid INT NOT NULL,
 PRIMARY KEY (manufacturerid, orderid, userid),
 FOREIGN KEY (manufacturerid) REFERENCES Manufacturer_Supplies2(id),
 FOREIGN KEY (userid, orderid) REFERENCES OrderPCPart_Orders(userid, orderid) );
+
+CREATE TABLE categories (
+id INT NOT NULL AUTO_INCREMENT,
+title CHAR(20) NOT NULL,
+PRIMARY KEY(id) );

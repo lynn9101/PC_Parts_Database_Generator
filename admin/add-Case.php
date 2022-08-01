@@ -10,7 +10,7 @@
         <!-- End Banner Section -->
         <!--Main Content Section-->
         <section class="form-content text-center">
-        <?php
+            <?php
                 $type = $_GET['type'];
                 if ($type == 'add') {
                     $title = 'NEW MODEL';

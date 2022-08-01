@@ -81,9 +81,9 @@
                                     <td><?php echo 'N/A'; ?></td>
 
                                     <td>
-                                        <a href="#" class="btn-secondary">Update</a>
+                                        <a href="../admin/add-StorageSSD.php?type=update&model=<?php echo $model; ?>&size=<?php echo $modelsize; ?>&ff=<?php echo $ff; ?>" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
-                                        <a href="#" class="btn-danger">Delete</a>
+                                        <a href="../admin/delete/delete-StorageSSD.php?model=<?php echo $model; ?>&size=<?php echo $modelsize; ?>&ff=<?php echo $ff; ?>" class="btn-danger">Delete</a>
                                     </td>
                                 </tr>
 
@@ -109,9 +109,9 @@
                                     <td><?php echo $rpm; ?>RPM</td>
 
                                     <td>
-                                        <a href="#" class="btn-secondary">Update</a>
+                                        <a href="../admin/add-StorageHDD.php?type=update&model=<?php echo $model; ?>&size=<?php echo $modelsize; ?>" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
-                                        <a href="#" class="btn-danger">Delete</a>
+                                        <a href="../admin/delete/delete-StorageHDD.php?model=<?php echo $model; ?>&size=<?php echo $modelsize; ?>" class="btn-danger">Delete</a>
                                     </td>
                                 </tr>
                                 <?php
