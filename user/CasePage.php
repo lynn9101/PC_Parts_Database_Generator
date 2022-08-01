@@ -29,16 +29,19 @@
                         $numRows = mysqli_num_rows($result);
 
                         if ($numRows > 0) {
+                            $count = 0;
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
                                 $color = $rows['colour'];
+                                $inputID = "color$count";
                                 ?>
                                 <li class="filter-item">
-                                    <input type="checkbox" id=$color name=$color value=$color>
-                                    <label for=$color><?php echo $color?></label>
+                                    <input type="checkbox" id=<?php echo $inputID?> name=<?php echo $inputID?> value=<?php echo $count?>>
+                                    <label for=<?php echo $inputID?>><?php echo $color?></label>
                                 </li>
 
                                 <?php
+                                $count++;
                             }
                         }
                     }
@@ -59,17 +62,20 @@
                         $numRows = mysqli_num_rows($result);
 
                         if ($numRows > 0) {
+                            $count = 0;
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
                                 $ff = $rows['formfactor'];
+                                $inputID = "ff$count";
                                 ?>
 
                                 <li class="filter-item">
-                                    <input type="checkbox" id=$ff name=$ff value=$ff>
-                                    <label for=$ff><?php echo $ff?></label>
+                                    <input type="checkbox" id=<?php echo $inputID?> name=<?php echo $inputID?> value=<?php echo $count?>>
+                                    <label for=<?php echo $inputID?>><?php echo $ff?></label>
                                 </li>
 
                                 <?php
+                                $count++;
                             }
                         }
                     }
@@ -80,7 +86,7 @@
             </div>
         </form>
         </div>
-        
+
         <div class="results-section">
             <table>
                 <tr>
