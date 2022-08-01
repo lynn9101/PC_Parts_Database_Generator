@@ -1,9 +1,9 @@
 const displayValues = 
-["Current Selection", "Motherboard", "Memory", "Storage", "Cooling System",
+["Current Selection", "Motherboard", "Memory", "SSD Storage", "HDD Storage", "Cooling System",
 "Central Processing Unit", "Graphics Card", "Case", "Power Supply"]
 
 const imgValues =
-["None", "motherboard", "memory", "storage", "cooling",
+["None", "motherboard", "memory", "storage", "storage", "cooling",
 "cpu", "gpu", "case", "power-supply"]
 
 const changeDisplay = () => {
