@@ -12,18 +12,73 @@
     <!-- Main Content Section -->
     <section class="product-main-content">
         <div class="filter-selection">
+        <form action="" method="POST">
             <div class="filter">
-                <h3>></h3>
-                <h3>Model</h3>
-            </div>
-            <div class="filter">
-                <h3>></h3>
                 <h3>Colour</h3>
             </div>
+            <ul>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT DISTINCT colour 
+                    FROM case2";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $color = $rows['colour'];
+                                ?>
+                                <li class="filter-item">
+                                    <input type="checkbox" id=$color name=$color value=$color>
+                                    <label for=$color><?php echo $color?></label>
+                                </li>
+
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+            </ul>
             <div class="filter">
-                <h3>></h3>
                 <h3>Form Factor</h3>
             </div>
+            <ul>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT DISTINCT formfactor 
+                    FROM case1";
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $ff = $rows['formfactor'];
+                                ?>
+
+                                <li class="filter-item">
+                                    <input type="checkbox" id=$ff name=$ff value=$ff>
+                                    <label for=$ff><?php echo $ff?></label>
+                                </li>
+
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+            </ul>
+            <div class="confirm-section">
+                <input type="submit" name="confirm-filter" value="Confirm" class="confirm-btn">
+            </div>
+        </form>
         </div>
         
         <div class="results-section">
@@ -39,7 +94,6 @@
                     FROM case1 c1
                     INNER JOIN case2 c2
                     ON c1.modelname = c2.modelname";
-                    $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {
