@@ -58,9 +58,9 @@
                                     <td><?php echo $ff; ?></td>
 
                                     <td>
-                                        <a href="#" class="btn-secondary">Update</a>
+                                        <a href="../admin/add-Case.php?type=update&model=<?php echo $model; ?>&color=<?php echo $color; ?>" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
-                                        <a href="#" class="btn-danger">Delete</a>
+                                        <a href="../admin/delete/delete-Case.php?model=<?php echo $model; ?>&color=<?php echo $color; ?>" class="btn-danger">Delete</a>
                                     </td>
                                 </tr>
 

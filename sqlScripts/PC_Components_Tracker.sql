@@ -120,7 +120,8 @@ CREATE TABLE Case2
 (modelname CHAR(100) NOT NULL,
 colour CHAR(20) NOT NULL,
 PRIMARY KEY (modelname, colour),
-FOREIGN KEY (modelname) REFERENCES Case1(modelname) );
+FOREIGN KEY (modelname) REFERENCES Case1(modelname)
+    ON UPDATE CASCADE );
 
 CREATE TABLE PowerSupply1
 (modelname CHAR(50) NOT NULL,
