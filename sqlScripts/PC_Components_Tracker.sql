@@ -132,7 +132,9 @@ CREATE TABLE PowerSupply2
 (modelname CHAR(50) NOT NULL,
 colour CHAR(20) NOT NULL,
 PRIMARY KEY (modelname, colour),
-FOREIGN KEY (modelname) REFERENCES PowerSupply1(modelname) );
+FOREIGN KEY (modelname) REFERENCES PowerSupply1(modelname)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE );
 
 CREATE TABLE User1
 (userid INT NOT NULL,
