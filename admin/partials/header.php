@@ -1,5 +1,5 @@
 <?php 
-    include('../config/connect.php'); 
+    include('C:\xampp\htdocs\pc_parts_database_generator\config\connect.php'); 
 ?>
 
 <html>

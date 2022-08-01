@@ -97,7 +97,7 @@
                                     <td><?php echo $cpu; ?></td>
 
                                     <td>
-                                        <a href="#" class="btn-secondary">Update</a>
+                                        <a href="../admin/add-GPU.php?type=update&id=<?php echo $id; ?>&model=<?php echo $model; ?>" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
                                         <a href="../admin/delete/delete-GPU.php?id=<?php echo $id; ?>&model=<?php echo $model; ?>" class="btn-danger">Delete</a>
                                     </td>
