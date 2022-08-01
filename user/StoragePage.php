@@ -37,19 +37,75 @@
                     <th>Storage Size</th>
                     <th>Write Speed</th>
                     <th>Read Speed</th>
+                    <th>Form Factor</th>
+                    <th>RPM</th>
                 </tr>
-                <tr>
-                    <td>Seagate Barracuda</td>
-                    <td>1TB</td>
-                    <td>6GB/s</td>
-                    <td>6GB/s</td>
-                </tr>
-                <tr>
-                    <td>WD Blue</td>
-                    <td>1TB</td>
-                    <td>5GB/s</td>
-                    <td>5GB/s</td>
-                </tr>
+                <?php
+                    // Query to get all SSD in the database
+                    $sql = "SELECT s1.model, s2.storagesizeGB modelsize, s1.writespeedMBps writespeed, s1.readspeedMBps readspeed, s2.formfactor ff
+                            FROM SSDStorage1 s1, SSDStorage2 s2 
+                            WHERE s1.model = s2.model";
+
+                    $sql2 = "SELECT h3.model, h3.storagesizeGB modelsize, h2.writespeedMBps writespeed, h2.readspeedMBps readspeed, h1.rpm rpm 
+                            FROM HDDStorage3 h3 
+                            INNER JOIN HDDStorage2 h2
+                            ON h3.model = h2.model
+                            INNER JOIN HDDStorage1 h1
+                            ON h2.writespeedMBps = h1.writespeedMBps AND h2.readspeedMBps = h1.readspeedMBps";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+
+                    if ($result == TRUE && $result2 == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+                        $numRows2 = mysqli_num_rows($result2);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $model = $rows['model'];
+                                $modelsize = $rows['modelsize'];
+                                $writespeed = $rows['writespeed'];
+                                $readspeed = $rows['readspeed'];
+                                $ff = $rows['ff'];
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $model; ?></td>
+                                    <td><?php echo $modelsize; ?>TB</td>
+                                    <td><?php echo $writespeed; ?>GB/s</td>
+                                    <td><?php echo $readspeed; ?>GB/s</td>
+                                    <td><?php echo $ff; ?></td>
+                                    <td><?php echo 'N/A'; ?></td>
+                                </tr>
+
+                                <?php
+                            }
+                        }
+                        if ($numRows2 > 0) {
+                            while ($rows2 = mysqli_fetch_assoc($result2)) {
+                                // Get data from each row
+                                $model = $rows2['model'];
+                                $modelsize = $rows2['modelsize'];
+                                $writespeed = $rows2['writespeed'];
+                                $readspeed = $rows2['readspeed'];
+                                $rpm = $rows2['rpm'];
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $model; ?></td>
+                                    <td><?php echo $modelsize; ?>TB</td>
+                                    <td><?php echo $writespeed; ?>GB/s</td>
+                                    <td><?php echo $readspeed; ?>GB/s</td>
+                                    <td><?php echo 'N/A'; ?></td>
+                                    <td><?php echo $rpm; ?>RPM</td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                    }
+                ?>
             </table>
         </div>
     </section>

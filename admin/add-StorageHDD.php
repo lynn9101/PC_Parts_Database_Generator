@@ -4,8 +4,10 @@
 
         <!-- Banner Section -->
         <div class="page-banner">
+            <div class="container">
             <div class="banner-text">
                 <h1>Storage</h1>
+            </div>
             </div>
         </div>
         <!-- End Banner Section -->
