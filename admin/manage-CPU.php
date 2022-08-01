@@ -20,17 +20,13 @@
                 <h3>></h3>
                 <h3>Number of Cores</h3>
             </div>
-            <div class="filter">
-                <h3>></h3>
-                <h3>Noise Level</h3>
-            </div>
         </div>
         
         <div class="results-section">
             <table>
                 <tr>
                     <th>Model Name</th>
-                    <th>Cores</th>
+                    <th>Number of cores</th>
                     <th>Core Clock Speed</th>
                     <th>Action</th>
                 </tr>
@@ -47,6 +43,7 @@
                         if ($numRows > 0) {
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
+                                $id = $rows['partid'];
                                 $model = $rows['brandname'];
                                 $cores = $rows['coresnumber'];
                                 $core_speed = $rows['coreclock'];
@@ -58,12 +55,11 @@
                                     <td><?php echo $core_speed; ?>GHz</td>
 
                                     <td>
-                                        <a href="#" class="btn-secondary">Update</a>
+                                        <a href="../admin/add-CPU.php?type=update&id=<?php echo $id; ?>" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
-                                        <a href="#" class="btn-danger">Delete</a>
+                                        <a href="../admin/delete/delete-CPU.php?id=<?php echo $id; ?>" class="btn-danger">Delete</a>
                                     </td>
                                 </tr>
-
                                 <?php
                             }
                         }
