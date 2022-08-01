@@ -31,7 +31,6 @@
                         $numRows = mysqli_num_rows($result);
 
                         if ($numRows > 0) {
-                            $count = 1;
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
                                 $color = $rows['colour'];
@@ -39,7 +38,6 @@
                                 <option value=<?php echo $color?>><?php echo $color?></option>
 
                                 <?php
-                                $count++;
                             }
                         }
                     }
@@ -61,7 +59,6 @@
                         $numRows = mysqli_num_rows($result);
 
                         if ($numRows > 0) {
-                            $count = 1;
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
                                 $ff = $rows['formfactor'];
@@ -70,7 +67,6 @@
                                 <option value="<?php echo $ff?>"><?php echo $ff?></option>
 
                                 <?php
-                                $count++;
                             }
                         }
                     }
