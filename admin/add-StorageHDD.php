@@ -164,9 +164,9 @@
         $model_rpm = $_POST['model_rpm'];
 
         // Create the SQL queries
-        $sql1 = "INSERT INTO HDDStorage3 VALUES ($storage_size,'$model_name');";
+        $sql1 = "INSERT INTO HDDStorage1 VALUES ($write_speed, $read_speed, $model_rpm);";
         $sql2 = "INSERT INTO HDDStorage2 VALUES ('$model_name',$write_speed, $read_speed);";
-        $sql3 = "INSERT INTO HDDStorage1 VALUES ($write_speed, $read_speed, $model_rpm);";
+        $sql3 = "INSERT INTO HDDStorage3 VALUES ($storage_size,'$model_name');";
         $conn = OpenCon();
         $result1 = mysqli_query($conn, $sql1) or die(mysqli_error($conn));
         $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
