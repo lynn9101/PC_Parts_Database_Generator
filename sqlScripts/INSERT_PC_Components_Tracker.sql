@@ -31,6 +31,7 @@ INSERT INTO Motherboard3 VALUES (251, 4);
 INSERT INTO Motherboard3 VALUES (215, 8);
 INSERT INTO Motherboard3 VALUES (829, 16);
 
+INSERT INTO Cpu VALUES (265, 2.6, 64, 'Intel Xeon E5 3100');
 INSERT INTO Cpu VALUES (393, 3.0, 4, 'AMD Athlon X2 3900');
 INSERT INTO Cpu VALUES (899, 4.4, 8, 'Intel Core i3 11700');
 INSERT INTO Cpu VALUES (62, 3.2, 4, 'Intel Pentium Gold 12500');

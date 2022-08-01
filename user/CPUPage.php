@@ -20,17 +20,13 @@
                 <h3>></h3>
                 <h3>Number of Cores</h3>
             </div>
-            <div class="filter">
-                <h3>></h3>
-                <h3>Noise Level</h3>
-            </div>
         </div>
         
         <div class="results-section">
             <table>
                 <tr>
                     <th>Model Name</th>
-                    <th>Cores</th>
+                    <th>Number of cores</th>
                     <th>Core Clock Speed</th>
                 </tr>
                 <?php
@@ -50,13 +46,11 @@
                                 $cores = $rows['coresnumber'];
                                 $core_speed = $rows['coreclock'];
                                 ?>
-
                                 <tr>
                                     <td><?php echo $model; ?></td>
                                     <td><?php echo $cores; ?></td>
                                     <td><?php echo $core_speed; ?>GHz</td>
                                 </tr>
-
                                 <?php
                             }
                         }

@@ -41,7 +41,7 @@
                 </tr>
                 <?php
                     // Query to get all suppliers in the database
-                    $sql = "SELECT m2.chipset, m1.formfactor ff, m3.memoryslots memslots, m1.supportedmemorysize memsize
+                    $sql = "SELECT m2.id, m2.chipset, m1.formfactor ff, m3.memoryslots memslots, m1.supportedmemorysize memsize
                     FROM motherboard2 m2 
                     INNER JOIN motherboard3 m3
                     ON m2.id = m3.id
@@ -57,6 +57,7 @@
                         if ($numRows > 0) {
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
+                                $mbid = $rows['id'];
                                 $chipset = $rows['chipset'];
                                 $ff = $rows['ff'];
                                 $memslots = $rows['memslots'];
@@ -70,9 +71,9 @@
                                     <td><?php echo $memsize; ?>GB</td>
 
                                     <td>
-                                        <a href="#" class="btn-secondary">Update</a>
+                                        <a href="../admin/add-MB.php?type=update&id=<?php echo $mbid; ?>&formfactor=<?php echo $ff; ?>" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
-                                        <a href="#" class="btn-danger">Delete</a>
+                                        <a href="../admin/delete/delete-MB.php?&id=<?php echo $mbid; ?>&formfactor=<?php echo $ff; ?>" class="btn-danger">Delete</a>
                                     </td>
                                 </tr>
 
