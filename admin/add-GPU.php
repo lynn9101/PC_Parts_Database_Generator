@@ -61,7 +61,6 @@
             <form action="" method="POST">
                 <table>
                     <?php
-                        //$type = $_GET['type'];
                         if ($type == 'add') {
                             ?>
                             <td>ID</td>

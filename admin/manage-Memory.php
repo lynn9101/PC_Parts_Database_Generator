@@ -64,7 +64,7 @@
                                     <td><?php echo $ff; ?></td>
 
                                     <td>
-                                        <a href="#" class="btn-secondary">Update</a>
+                                        <a href="../admin/add-Memory.php?type=update&id=<?php echo $id; ?>" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
                                         <a href="../admin/delete/delete-Memory.php?id=<?php echo $id; ?>" class="btn-danger">Delete</a>
                                     </td>       
