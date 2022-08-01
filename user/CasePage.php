@@ -11,7 +11,7 @@
 
     <!-- Main Content Section -->
     <section class="product-main-content">
-        <div class="filter-selection">
+        <div class="filter-selection text-center">
 
         <form action="http://localhost/pc_parts_database_generator/user/CasePage.php" method="POST">
             <div class="filter">
@@ -43,6 +43,7 @@
                     }
                     ?>
             </select>
+
             <div class="filter">
                 <h3>Form Factor</h3>
             </div>
@@ -72,6 +73,7 @@
                     }
                     ?>
             </select>
+
             <div class="confirm-section">
                 <input type="submit" name="confirm-filter" value="Confirm" class="confirm-btn">
             </div>
