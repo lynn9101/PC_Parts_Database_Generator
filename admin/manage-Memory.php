@@ -50,6 +50,7 @@
                         if ($numRows > 0) {
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
+                                $id = $rows['id'];
                                 $model = $rows['model'];
                                 $ff = $rows['ff'];
                                 $size = $rows['size'];
@@ -65,7 +66,7 @@
                                     <td>
                                         <a href="#" class="btn-secondary">Update</a>
                                         <!-- ?id= the id of supplier that we need to pass into another page -->
-                                        <a href="#" class="btn-danger">Delete</a>
+                                        <a href="../admin/delete/delete-Memory.php?id=<?php echo $id; ?>" class="btn-danger">Delete</a>
                                     </td>       
                                 </tr>
                                 <?php
