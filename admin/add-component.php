@@ -24,12 +24,13 @@
                     <option value="0">None</option>
                     <option value="1">Motherboard</option>
                     <option value="2">Memory</option>
-                    <option value="3">Storage</option>
-                    <option value="4">Cooling System</option>
-                    <option value="5">Central Processing Unit</option>
-                    <option value="6">Graphics Card</option>
-                    <option value="7">Case</option>
-                    <option value="8">Power Supply</option>
+                    <option value="3">Storage - SSD</option>
+                    <option value="4">Storage - HDD</option>
+                    <option value="5">Cooling System</option>
+                    <option value="6">Central Processing Unit</option>
+                    <option value="7">Graphics Card</option>
+                    <option value="8">Case</option>
+                    <option value="9">Power Supply</option>
                 </select>
                 
                 <input type="submit" name="submit-add" value="Add" class="btn-secondary btn" id="btn">
@@ -38,8 +39,8 @@
 
                 <!--the array has been provided with filler variables. replace once pages are ready-->
                 <?php
-                    $addPages = ["None", "add-MB", "add-Memory", "add-Storage", "add-Cooling", "add-CPU", "add-GPU", "add-Case", "add-PSU"];
-                    $editPages = ["None", "manage-MB", "manage-Memory", "manage-Storage", "manage-Cooling", "manage-CPU", "manage-GPU", "manage-Case", "manage-PSU"];
+                    $addPages = ["None", "add-MB", "add-Memory", "add-StorageSSD","add-StorageHDD", "add-Cooling", "add-CPU", "add-GPU", "add-Case", "add-PSU"];
+                    $editPages = ["None", "manage-MB", "manage-Memory", "manage-Storage", "manage-Storage", "manage-Cooling", "manage-CPU", "manage-GPU", "manage-Case", "manage-PSU"];
                     if (isset($_POST['submit-add'])) {
                         $id = $_POST['category'];
                         header("location: http://localhost/pc_parts_database_generator/admin/{$addPages[$id]}.php?type=add");

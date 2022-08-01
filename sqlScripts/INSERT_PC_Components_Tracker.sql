@@ -284,3 +284,12 @@ INSERT INTO Manufacturer_Supplies3 VALUES (371, 1384, 1727);
 INSERT INTO Manufacturer_Supplies3 VALUES (586, 8797, 6153);
 INSERT INTO Manufacturer_Supplies3 VALUES (359, 6380, 6772);
 INSERT INTO Manufacturer_Supplies3 VALUES (749, 5499, 9207);
+
+INSERT INTO categories SET title = 'Motherboard';
+INSERT INTO categories SET title = 'Memory';
+INSERT INTO categories SET title = 'Storage';
+INSERT INTO categories SET title = 'Cooling System';
+INSERT INTO categories SET title = 'Central Processing Unit';
+INSERT INTO categories SET title = 'Graphics Card';
+INSERT INTO categories SET title = 'Case';
+INSERT INTO categories SET title = 'Power Supply';
