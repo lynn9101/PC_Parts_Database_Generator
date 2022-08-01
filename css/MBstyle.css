@@ -91,6 +91,10 @@
     height: 25px;
 }
 
+.range-text {
+    margin-bottom: 10px;
+}
+
 .confirm-section {
     width: 100%;
     text-align: center;

@@ -72,7 +72,7 @@
             <br>
             <label for="max-w">max:</label>
             <input type="number" name="max-w" min=<?php echo $min;?> min=<?php echo $max;?> value=<?php echo $max;?>>
-            <p class="text-center">(min: <?php echo $min;?> max: <?php echo $max;?>)</p>
+            <p class="text-center range-text">(min: <?php echo $min;?> max: <?php echo $max;?>)</p>
 
             <div class="filter">
                 <h3>Modularity</h3>
@@ -126,7 +126,6 @@
                             array_push($cond, $color);
                         }
                     }
-                    $test = "";
                     if(isset($_POST['modular'])){
                         $modular = 'p1.modularity = "' . $_POST['modular'] . '"';
                         if($_POST['modular'] != 0){
@@ -141,7 +140,7 @@
                         $max = $_POST['max-w'];
                         $condStr2 = "WHERE p1.watts >= $min AND p1.watts <= $max";
                         if(count($cond) > 0){
-                            $condStr = " AND p1.modelname IN $condStr (SELECT p1.modelname
+                            $condStr = " AND p1.modelname IN (SELECT p1.modelname
                             FROM powersupply1 p1
                             INNER JOIN powersupply2 p2
                             ON p1.modelname = p2.modelname
