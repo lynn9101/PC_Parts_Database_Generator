@@ -29,6 +29,7 @@
         <div class="results-section">
             <table>
                 <tr>
+                    <th>Model</th>
                     <th>Size</th>
                     <th>Speed</th>
                     <th>Form Factor</th>
@@ -36,7 +37,7 @@
                 </tr>
                 <?php
                     // Query to get all suppliers in the database
-                    $sql = "SELECT m1.partid id, m1.formfactor ff, m2.sizeGB size, m2.speed 
+                    $sql = "SELECT m1.partid id, m1.formfactor ff, m2.modelname model, m2.sizeGB size, m2.speed 
                     FROM memory1 m1, memory2 m2 
                     WHERE m1.partid = m2.partid";
                     $conn = OpenCon();
@@ -49,23 +50,24 @@
                         if ($numRows > 0) {
                             while ($rows = mysqli_fetch_assoc($result)) {
                                 // Get data from each row
+                                $model = $rows['model'];
                                 $ff = $rows['ff'];
                                 $size = $rows['size'];
                                 $speed = $rows['speed'];
                                 ?>
 
                                 <tr>
+                                    <th><?php echo $model; ?></td>
                                     <td><?php echo $size; ?>GB</td>
                                     <td><?php echo $speed; ?></td>
                                     <td><?php echo $ff; ?></td>
-                                    
-                                    <td>
-                                    <a href="#" class="btn-secondary">Update</a>
-                                    <!-- ?id= the id of supplier that we need to pass into another page -->
-                                    <a href="#" class="btn-danger">Delete</a>
-                                </td>
-                                </tr>
 
+                                    <td>
+                                        <a href="#" class="btn-secondary">Update</a>
+                                        <!-- ?id= the id of supplier that we need to pass into another page -->
+                                        <a href="#" class="btn-danger">Delete</a>
+                                    </td>       
+                                </tr>
                                 <?php
                             }
                         }

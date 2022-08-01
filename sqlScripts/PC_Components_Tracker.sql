@@ -32,6 +32,7 @@ PRIMARY KEY (partid) );
 
 CREATE TABLE Memory2
 (partid INT NOT NULL,
+modelname CHAR(100) NOT NULL,
 sizeGB INT NOT NULL,
 speed CHAR(20) NOT NULL,
 PRIMARY KEY (partid, sizeGB, speed),
