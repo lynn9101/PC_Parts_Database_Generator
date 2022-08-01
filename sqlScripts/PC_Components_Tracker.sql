@@ -94,6 +94,7 @@ model CHAR(50) NOT NULL,
 memorysizeGB INT NOT NULL, 
 cpuid INT NOT NULL,
 PRIMARY KEY (gpuid, model, memorysizeGB, cpuid),
+FOREIGN KEY (gpuid) REFERENCES GPU_Contains1(gpuid),
 FOREIGN KEY (cpuid) REFERENCES Cpu(partid) );
 
 CREATE TABLE CoolingSystem1

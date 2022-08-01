@@ -1,7 +1,7 @@
-<?php 
+<?php
+    ob_start();
     include('../config/connect.php');
 ?>
-
 <html>
     <head>
         <meta charset="UTF-8">
