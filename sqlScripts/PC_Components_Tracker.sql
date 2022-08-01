@@ -32,6 +32,7 @@ PRIMARY KEY (partid) );
 
 CREATE TABLE Memory2
 (partid INT NOT NULL,
+modelname CHAR(100) NOT NULL,
 sizeGB INT NOT NULL,
 speed CHAR(20) NOT NULL,
 PRIMARY KEY (partid, sizeGB, speed),
@@ -94,6 +95,9 @@ model CHAR(50) NOT NULL,
 memorysizeGB INT NOT NULL, 
 cpuid INT NOT NULL,
 PRIMARY KEY (gpuid, model, memorysizeGB, cpuid),
+FOREIGN KEY (gpuid, model) REFERENCES GPU_Contains1(gpuid, model)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
 FOREIGN KEY (cpuid) REFERENCES Cpu(partid) );
 
 CREATE TABLE CoolingSystem1

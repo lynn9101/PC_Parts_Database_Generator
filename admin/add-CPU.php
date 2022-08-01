@@ -33,6 +33,15 @@
                         <td>Core Speed</td>
                         <td><input required type="number" name="core_speed" placeholder="enter model core clock speed in GHz"></td>
                     </tr>
+                    <tr>
+                        <td>Integrated/ Dedicated</td>
+                        <td>
+                            <select name="dedicated">
+                                <option value="1">Integrated</option>
+                                <option value="0">Dedicated</option>
+                            </select>
+                        </td>
+                    </tr> 
                 </table>
                 <!--confirm button-->
                 <br>

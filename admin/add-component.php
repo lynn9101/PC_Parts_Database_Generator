@@ -42,7 +42,7 @@
                     $editPages = ["None", "manage-MB", "manage-Memory", "manage-Storage", "manage-Cooling", "manage-CPU", "manage-GPU", "manage-Case", "manage-PSU"];
                     if (isset($_POST['submit-add'])) {
                         $id = $_POST['category'];
-                        header("location: http://localhost/pc_parts_database_generator/admin/{$addPages[$id]}.php");
+                        header("location: http://localhost/pc_parts_database_generator/admin/{$addPages[$id]}.php?type=add");
                     } elseif (isset($_POST['submit-manage'])) {
                         $id = $_POST['category'];
                         header("location: http://localhost/pc_parts_database_generator/admin/{$editPages[$id]}.php");
@@ -53,5 +53,3 @@
         <!-- End Main Content Section -->
 
 <?php include('partials/footer.php'); ?>
-
-
