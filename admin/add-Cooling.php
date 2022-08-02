@@ -48,8 +48,8 @@
         $noise_level = $_POST['noise_level'];
     
         // Create the SQL queries
-        $sql1 = "INSERT INTO Cooling1 VALUES ('$model_name','$noise_level');";
-        $sql2 = "INSERT INTO Cooling2 VALUES ('$model_name','$colour');";
+        $sql1 = "INSERT INTO CoolingSystem1 VALUES ('$model_name','$noise_level');";
+        $sql2 = "INSERT INTO CoolingSystem2 VALUES ('$model_name','$colour');";
         $conn = OpenCon();
         $result1 = mysqli_query($conn, $sql1) or die(mysqli_error($conn));
         $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
@@ -74,10 +74,10 @@
         $noise_level = $_POST['noise_level'];
 
         // Create the SQL queries
-        $sql2 = "UPDATE Cooling1 SET
+        $sql2 = "UPDATE CoolingSystem1 SET
                 noise_level='$noise_level'
                 WHERE model_name ='$model_name'";
-        $sql3 = "UPDATE Cooling2 SET
+        $sql3 = "UPDATE CoolingSystem2 SET
                 model_name='$model_name',
                 colour ='$colour',
                 WHERE model_name ='$model_name'";
