@@ -192,4 +192,4 @@
     </section>
     <!-- End Main Content Section -->
 
-<?php include('partials/footer.php'); ?>
+<?php include('partials-frontend/footer.php'); ?>
