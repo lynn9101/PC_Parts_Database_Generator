@@ -110,7 +110,8 @@ CREATE TABLE CoolingSystem2
 (modelname CHAR(100) NOT NULL,
 colour CHAR(20) NOT NULL,
 PRIMARY KEY (modelname, colour),
-FOREIGN KEY (modelname) REFERENCES CoolingSystem1(modelname) );
+FOREIGN KEY (modelname) REFERENCES CoolingSystem1(modelname) 
+   ON UPDATE CASCADE );
 
 CREATE TABLE Case1
 (modelname CHAR(100) NOT NULL,
