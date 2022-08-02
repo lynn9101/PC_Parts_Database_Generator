@@ -67,7 +67,7 @@
             $_SESSION['supplier'] = $supplier_name;
 
             // Redirect to previous page
-            header("location: http://localhost/pc_parts_database_generator/admin/index.php");
+            header("location: http://localhost/pc_parts_database_generator/admin/suppliers-list.php");
         } else {
             $_SESSION['login'] = "Falied to Login Supplier";
 
