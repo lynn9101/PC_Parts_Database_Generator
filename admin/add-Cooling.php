@@ -141,7 +141,7 @@
             ob_end_flush();
         } else {
             // Redirect to previous page
-            header("location: http://localhost/pc_parts_database_generator/admin/add-MB.php");
+            header("location: http://localhost/pc_parts_database_generator/admin/add-Cooling.php");
         }
     }
 
