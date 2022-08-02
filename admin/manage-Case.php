@@ -12,7 +12,7 @@
     <!-- Main Content Section -->
     <section class="product-main-content">
         <div class="filter-selection text-center">
-        <form action="http://localhost/pc_parts_database_generator/user/CasePage.php" method="POST">
+        <form action="http://localhost/pc_parts_database_generator/admin/manage-Case.php" method="POST">
             <div class="filter">
                 <h3>Colour</h3>
             </div>
