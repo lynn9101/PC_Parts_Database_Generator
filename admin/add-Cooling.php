@@ -76,11 +76,11 @@
         // Create the SQL queries
         $sql2 = "UPDATE Cooling1 SET
                 noise_level='$noise_level'
-                WHERE partid='$id'";
+                WHERE model_name ='$model_name'";
         $sql3 = "UPDATE Cooling2 SET
                 model_name='$model_name',
                 colour ='$colour',
-                WHERE partid='$id'";
+                WHERE model_name ='$model_name'";
         $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
         $result3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
 
