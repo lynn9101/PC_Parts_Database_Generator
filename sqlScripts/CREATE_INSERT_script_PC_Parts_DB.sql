@@ -1,3 +1,175 @@
+CREATE TABLE Motherboard1
+(formfactor CHAR(50) NOT NULL,
+supportedmemorysize INT NOT NULL,
+PRIMARY KEY (formfactor, supportedmemorysize) );
+
+CREATE TABLE Motherboard2
+(id INT NOT NULL,
+chipset CHAR(100) NOT NULL,
+formfactor CHAR(50) NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (formfactor) REFERENCES Motherboard1(formfactor) );
+
+CREATE TABLE Motherboard3
+(id INT NOT NULL,
+memoryslots INT NOT NULL,
+PRIMARY KEY (id, memoryslots),
+FOREIGN KEY (id) REFERENCES Motherboard2(id) 
+    ON DELETE CASCADE
+    ON UPDATE CASCADE );
+
+CREATE TABLE Cpu
+(partid INT NOT NULL,
+coreclock DOUBLE NOT NULL,
+coresnumber INT NOT NULL,
+brandname CHAR(100) NOT NULL,
+PRIMARY KEY (partid) );
+
+CREATE TABLE Memory1
+(partid INT NOT NULL,
+formfactor CHAR(50) NOT NULL,
+PRIMARY KEY (partid) );
+
+CREATE TABLE Memory2
+(partid INT NOT NULL,
+modelname CHAR(100) NOT NULL,
+sizeGB INT NOT NULL,
+speed CHAR(20) NOT NULL,
+PRIMARY KEY (partid, sizeGB, speed),
+FOREIGN KEY (partid) REFERENCES Memory1(partid) 
+    ON DELETE CASCADE
+    ON UPDATE CASCADE );
+
+CREATE TABLE SSDStorage1
+(model CHAR(100) NOT NULL,
+writespeedMBps INT NOT NULL,
+readspeedMBps INT NOT NULL,
+PRIMARY KEY (model) );
+
+CREATE TABLE SSDStorage2
+(storagesizeGB INT NOT NULL,
+model CHAR(100) NOT NULL,
+formfactor CHAR(30) NOT NULL,
+PRIMARY KEY (storagesizeGB, model, formfactor),
+FOREIGN KEY (model) REFERENCES SSDStorage1(model) 
+    ON DELETE CASCADE
+    ON UPDATE CASCADE );
+
+CREATE TABLE HDDStorage1
+(writespeedMBps INT NOT NULL,
+readspeedMBps INT NOT NULL,
+rpm INT NOT NULL,
+PRIMARY KEY (writespeedMBps, readspeedMBps) );
+
+CREATE TABLE HDDStorage2
+(model CHAR(100) NOT NULL,
+writespeedMBps INT NOT NULL,
+readspeedMBps INT NOT NULL,
+PRIMARY KEY (model), 
+FOREIGN KEY (writespeedMBps, readspeedMBps) REFERENCES HDDStorage1(writespeedMBps, readspeedMBps) 
+    ON UPDATE CASCADE );
+
+CREATE TABLE HDDStorage3
+(storagesizeGB INT NOT NULL,
+model CHAR(100) NOT NULL,
+PRIMARY KEY (storagesizeGB, model),
+FOREIGN KEY (model) REFERENCES HDDStorage2(model)
+    ON UPDATE CASCADE );
+
+CREATE TABLE GPU_Contains1
+(gpuid INT NOT NULL,
+model CHAR(50) NOT NULL,
+memorytype CHAR(10) NOT NULL,
+boostclock INT NOT NULL,
+coreclock INT NOT NULL,
+PRIMARY KEY (gpuid, model) );
+
+CREATE TABLE GPU_Contains2
+(integrated BOOLEAN NOT NULL,
+cpuid INT NOT NULL,
+PRIMARY KEY (cpuid),
+FOREIGN KEY (cpuid) REFERENCES Cpu(partid) );
+
+CREATE TABLE GPU_Contains3
+(gpuid INT NOT NULL,
+model CHAR(50) NOT NULL,
+memorysizeGB INT NOT NULL, 
+cpuid INT NOT NULL,
+PRIMARY KEY (gpuid, model, memorysizeGB, cpuid),
+FOREIGN KEY (gpuid, model) REFERENCES GPU_Contains1(gpuid, model)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+FOREIGN KEY (cpuid) REFERENCES Cpu(partid) );
+
+CREATE TABLE CoolingSystem1
+(modelname CHAR(100) NOT NULL,
+noiseleveldB INT NOT NULL,
+PRIMARY KEY (modelname) );
+
+CREATE TABLE CoolingSystem2
+(modelname CHAR(100) NOT NULL,
+colour CHAR(20) NOT NULL,
+PRIMARY KEY (modelname, colour),
+FOREIGN KEY (modelname) REFERENCES CoolingSystem1(modelname) 
+   ON UPDATE CASCADE );
+
+CREATE TABLE Case1
+(modelname CHAR(100) NOT NULL,
+formfactor CHAR(20) NOT NULL,
+PRIMARY KEY (modelname) );
+
+CREATE TABLE Case2
+(modelname CHAR(100) NOT NULL,
+colour CHAR(20) NOT NULL,
+PRIMARY KEY (modelname, colour),
+FOREIGN KEY (modelname) REFERENCES Case1(modelname)
+    ON UPDATE CASCADE );
+
+CREATE TABLE PowerSupply1
+(modelname CHAR(50) NOT NULL,
+watts INT NOT NULL,
+modularity CHAR(10) NOT NULL,
+PRIMARY KEY (modelname) );
+
+CREATE TABLE PowerSupply2
+(modelname CHAR(50) NOT NULL,
+colour CHAR(20) NOT NULL,
+PRIMARY KEY (modelname, colour),
+FOREIGN KEY (modelname) REFERENCES PowerSupply1(modelname)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE );
+
+CREATE TABLE User1
+(userid INT NOT NULL,
+name CHAR(50) NOT NULL,
+PRIMARY KEY (userid) );
+
+CREATE TABLE User2
+(userid INT NOT NULL,
+address CHAR(100) NOT NULL,
+phonenumber BIGINT NOT NULL,
+PRIMARY KEY (userid, address, phonenumber),
+FOREIGN KEY (userid) REFERENCES User1(userid) );
+
+CREATE TABLE OrderPCPart_Orders
+(userid INT NOT NULL,
+orderid INT NOT NULL,
+PRIMARY KEY (userid, orderid),
+FOREIGN KEY (userid) REFERENCES User1(userid) );
+
+CREATE TABLE manufacturer_supplies
+(id INT NOT NULL AUTO_INCREMENT,
+ name CHAR(20) NOT NULL,
+ contactinfo CHAR(50) NOT NULL,
+ address CHAR(100) NOT NULL,
+ password CHAR(100) NOT NULL,
+ PRIMARY KEY (id));
+
+CREATE TABLE categories (
+id INT NOT NULL AUTO_INCREMENT,
+title CHAR(20) NOT NULL,
+PRIMARY KEY(id) );
+
 INSERT INTO Motherboard1 VALUES ('AT', 512);
 INSERT INTO Motherboard1 VALUES ('SSI CEB', 4096);
 INSERT INTO Motherboard1 VALUES ('SSI EEB', 128);
@@ -219,71 +391,16 @@ INSERT INTO PowerSupply2 VALUES ('MSI C 2020', 'Camo/Green');
 INSERT INTO PowerSupply2 VALUES ('Apevia W1', 'Silver/White');
 INSERT INTO PowerSupply2 VALUES ('Enermax P GM', 'Blue');
 
-INSERT INTO User1 VALUES (5170, 'Levi');
-INSERT INTO User1 VALUES (185, 'Justin');
-INSERT INTO User1 VALUES (104, 'Austin');
-INSERT INTO User1 VALUES (8302, 'Kevin');
-INSERT INTO User1 VALUES (1727, 'Maxwell');
-INSERT INTO User1 VALUES (9207, 'Emiliano');
-INSERT INTO User1 VALUES (7576, 'Aaron');
-INSERT INTO User1 VALUES (6199, 'Braxton');
-INSERT INTO User1 VALUES (6153, 'Zayden');
-INSERT INTO User1 VALUES (6772, 'Messiah');
-
-INSERT INTO User2 VALUES (5170, 'Luca Alley', 3036490762);
-INSERT INTO User2 VALUES (185, 'Finn Highway', 9217834769);
-INSERT INTO User2 VALUES (104, 'Brooks Alley', 3187764776);
-INSERT INTO User2 VALUES (8302, 'Roman Alley', 6655420971);
-INSERT INTO User2 VALUES (1727, 'Jacob Avenue', 8661222894);
-INSERT INTO User2 VALUES (9207, 'Graham Avenue', 5621933809);
-INSERT INTO User2 VALUES (7576, 'Wyatt Alley', 3336251808);
-INSERT INTO User2 VALUES (6199, 'Bryce Highway', 9867871390);
-INSERT INTO User2 VALUES (6153, 'Rowan Street', 6626331602);
-INSERT INTO User2 VALUES (6772, 'Dylan Street', 8684181840);
-
-INSERT INTO OrderPCPart_Orders VALUES (185, 9223);
-INSERT INTO OrderPCPart_Orders VALUES (7576, 8767);
-INSERT INTO OrderPCPart_Orders VALUES (5170, 4049);
-INSERT INTO OrderPCPart_Orders VALUES (6199, 8925);
-INSERT INTO OrderPCPart_Orders VALUES (8302, 2077);
-INSERT INTO OrderPCPart_Orders VALUES (104, 5961);
-INSERT INTO OrderPCPart_Orders VALUES (1727, 1384);
-INSERT INTO OrderPCPart_Orders VALUES (6153, 8797);
-INSERT INTO OrderPCPart_Orders VALUES (6772, 6380);
-INSERT INTO OrderPCPart_Orders VALUES (9207, 5499);
-
-INSERT INTO Manufacturer_Supplies1 VALUES ('Super Flower', 'SuperFlower@hotmail.com', 'Oscar Road');
-INSERT INTO Manufacturer_Supplies1 VALUES ('iBuypower', 'iBuypower@gmail.com', 'Giovanni Alley');
-INSERT INTO Manufacturer_Supplies1 VALUES ('CoolMax', 'CoolMax@yahoo.com', 'King Street');
-INSERT INTO Manufacturer_Supplies1 VALUES ('Scythe', 'Scythe@outlook.com', 'Harrison Avenue');
-INSERT INTO Manufacturer_Supplies1 VALUES ('Dynapower', 'Dynapower@hotmail.com', 'Angel Avenue');
-INSERT INTO Manufacturer_Supplies1 VALUES ('NCASE', 'NCASE@outlook.com', 'Lincoln Alley');
-INSERT INTO Manufacturer_Supplies1 VALUES ('Golden Field', 'Golden Field@yahoo.com', 'Cameron Road');
-INSERT INTO Manufacturer_Supplies1 VALUES ('Dynatron', 'Dynatron@hotmail.com', 'David Avenue');
-INSERT INTO Manufacturer_Supplies1 VALUES ('Raidmax', 'Raidmax@gmail.com', 'Anthony Road');
-INSERT INTO Manufacturer_Supplies1 VALUES ('Mars Gaming', 'MarsGaming@outlook.com', 'Alex Alley');
-
-INSERT INTO Manufacturer_Supplies2 VALUES (913, 'Super Flower');
-INSERT INTO Manufacturer_Supplies2 VALUES (192, 'iBuypower');
-INSERT INTO Manufacturer_Supplies2 VALUES (92, 'CoolMax');
-INSERT INTO Manufacturer_Supplies2 VALUES (1000, 'Scythe');
-INSERT INTO Manufacturer_Supplies2 VALUES (621, 'Dynapower');
-INSERT INTO Manufacturer_Supplies2 VALUES (267, 'NCASE');
-INSERT INTO Manufacturer_Supplies2 VALUES (371, 'Golden Field');
-INSERT INTO Manufacturer_Supplies2 VALUES (586, 'Dynatron');
-INSERT INTO Manufacturer_Supplies2 VALUES (359, 'Raidmax');
-INSERT INTO Manufacturer_Supplies2 VALUES (749, 'Mars Gaming');
-
-INSERT INTO Manufacturer_Supplies3 VALUES (913, 9223, 185);
-INSERT INTO Manufacturer_Supplies3 VALUES (192, 8767, 7576);
-INSERT INTO Manufacturer_Supplies3 VALUES (92, 4049, 5170);
-INSERT INTO Manufacturer_Supplies3 VALUES (1000, 8925, 6199);
-INSERT INTO Manufacturer_Supplies3 VALUES (621, 2077, 8302);
-INSERT INTO Manufacturer_Supplies3 VALUES (267, 5961, 104);
-INSERT INTO Manufacturer_Supplies3 VALUES (371, 1384, 1727);
-INSERT INTO Manufacturer_Supplies3 VALUES (586, 8797, 6153);
-INSERT INTO Manufacturer_Supplies3 VALUES (359, 6380, 6772);
-INSERT INTO Manufacturer_Supplies3 VALUES (749, 5499, 9207);
+INSERT INTO Manufacturer_Supplies VALUES (913, 'Super Flower', 'SuperFlower@hotmail.com', 'Oscar Road', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (192, 'iBuypower', 'iBuypower@gmail.com', 'Giovanni Alley', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (92, 'CoolMax', 'CoolMax@yahoo.com', 'King Street', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (1000, 'Scythe', 'Scythe@outlook.com', 'Harrison Avenue', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (621, 'Dynapower', 'Dynapower@hotmail.com', 'Angel Avenue', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (267, 'NCASE', 'NCASE@outlook.com', 'Lincoln Alley', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (371, 'Golden Field', 'Golden Field@yahoo.com', 'Cameron Road', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (586, 'Dynatron', 'Dynatron@hotmail.com', 'David Avenue', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (359, 'Raidmax', 'Raidmax@gmail.com', 'Anthony Road', 'test');
+INSERT INTO Manufacturer_Supplies VALUES (749, 'Mars Gaming', 'MarsGaming@outlook.com', 'Alex Alley', 'test');
 
 INSERT INTO categories SET title = 'Motherboard';
 INSERT INTO categories SET title = 'Memory';

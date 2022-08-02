@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Motherboards</title>
+    <title>Manage Models - PC Components Tracker</title>
     <link rel="stylesheet" href="../css/MBstyle.css">
     <link rel="stylesheet" href="../css/util.css">
 </head>
@@ -23,9 +23,6 @@
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
                         <a href="suppliers-list.php">Suppliers</a>
                     </li>
 
@@ -35,9 +32,6 @@
 
                     <li>
                         <a href="add-component.php">Component</a>
-                    </li>
-                    <li>
-                        <a href="orders-list.php">Orders</a>
                     </li>
                     <li>
                         <a href="supplier-logout.php">Logout</a>

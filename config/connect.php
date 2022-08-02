@@ -1,7 +1,7 @@
 <?php
     function OpenCon()
     {
-        session_start();
+        //session_start();
         $home_page_url = "http://localhost/pc_parts_database_generator/";
 
         $dbhost = "localhost";
