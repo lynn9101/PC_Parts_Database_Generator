@@ -1,5 +1,4 @@
 
-
 const updateFilterVisual = () => {
     dropdown = document.getElementById("storageType");
     ff = document.getElementById("ff");

@@ -90,7 +90,7 @@
                             <?php
                                 if ($type == 'add') {
                                     ?>
-                                    <input required type="number" name="write_speed" placeholder="enter write speed of model in GB/s">
+                                    <input required type="number" name="write_speed" placeholder="enter write speed of model in MB/s">
                                     <?php
                                 } else {
                                     ?>
@@ -106,7 +106,7 @@
                             <?php
                                 if ($type == 'add') {
                                     ?>
-                                    <input required type="number" name="read_speed" placeholder="enter read speed of models in GB/s">
+                                    <input required type="number" name="read_speed" placeholder="enter read speed of models in MB/s">
                                     <?php
                                 } else {
                                     ?>
