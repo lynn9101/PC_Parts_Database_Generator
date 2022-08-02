@@ -152,12 +152,14 @@
         $size = $_POST['size'];
         $speed = $_POST['speed'];
         $form_factor = $_POST['form_factor'];
+
         // Create the SQL queries
         $sql2 = "INSERT INTO Memory1 VALUES ($id,'$form_factor')";
         $sql3 = "INSERT INTO Memory2 VALUES ($id,'$model',$size,'$speed')";
         $conn = OpenCon();
         $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
         $result3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
+        
         // Insert data into database
         if ($result2 == TRUE && $result3 == TRUE) {
             // Redirect to previous page
@@ -178,6 +180,7 @@
         $size = $_POST['size'];
         $speed = $_POST['speed'];
         $form_factor = $_POST['form_factor'];
+        
         // Create the SQL queries
         $sql2 = "UPDATE Memory1 SET
                 formfactor='$form_factor'
@@ -189,6 +192,7 @@
                 WHERE partid='$id'";
         $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
         $result3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
+
         // Insert data into database
         if ($result2 == TRUE && $result3 == TRUE) {
             // Redirect to previous page
