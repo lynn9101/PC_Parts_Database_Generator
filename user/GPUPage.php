@@ -256,6 +256,50 @@
                     }
                 ?>
             </table>
+
+            <h2 class="stats">Statisics</h2>
+            <table class="stats-table">
+                <tr>
+                    <th>Memory Type</th>
+                    <th>Average Boost Clock Performance</th>
+                    <th>Average Core Clock Performance</th>
+                </tr>
+                <?php
+                    $sql = "SELECT g1.memorytype memtype, AVG(g1.boostclock) boost, AVG(g1.coreclock) core
+                    FROM gpu_contains1 g1 
+                    INNER JOIN gpu_contains3 g3
+                    ON g1.gpuid = g3.gpuid
+                    INNER JOIN gpu_contains2 g2
+                    ON g2.cpuid = g3.cpuid
+                    INNER JOIN cpu
+                    ON cpu.partid = g3.cpuid
+                    GROUP BY g1.memorytype";
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $type = $rows['memtype'];
+                                $boost = $rows['boost'];
+                                $core = $rows['core'];
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $type; ?></td>
+                                    <td><?php echo $boost; ?>MHz</td>
+                                    <td><?php echo $core; ?>MHz</td>
+                                </tr>
+
+                                <?php
+                            }
+                        }
+                    }
+                ?>
+            </table>
         </div>
     </section>
     <!-- End Main Content Section -->

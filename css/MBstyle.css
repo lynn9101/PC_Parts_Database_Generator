@@ -141,3 +141,12 @@
 .results-section tr:nth-child(odd) {
     background-color: #ececec;
 }
+
+.stats {
+    margin-top: 40px;
+    margin-left: 10%;
+}
+
+.stats-table {
+    width: 60%;
+}
