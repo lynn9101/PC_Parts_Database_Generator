@@ -157,8 +157,9 @@
 
                     // Query to get all suppliers in the database
                     $sql = "SELECT m1.partid id, m1.formfactor ff, m2.modelname model, m2.sizeGB size, m2.speed 
-                    FROM memory1 m1, memory2 m2 
-                    WHERE m1.partid = m2.partid $condStr2";
+                    FROM memory1 m1
+                    INNER JOIN memory2 m2 
+                    ON m1.partid = m2.partid $condStr2";
                     $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
