@@ -103,7 +103,6 @@
                     FROM coolingsystem1 c1
                     INNER JOIN coolingsystem2 c2 
                     ON c1.modelname = c2.modelname $condStr";
-                    $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {

@@ -160,7 +160,6 @@
                     FROM powersupply1 p1
                     INNER JOIN powersupply2 p2 
                     ON p1.modelname = p2.modelname $condStr2";
-                    $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {

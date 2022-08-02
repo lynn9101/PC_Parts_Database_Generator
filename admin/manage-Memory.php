@@ -160,7 +160,6 @@
                     FROM memory1 m1
                     INNER JOIN memory2 m2 
                     ON m1.partid = m2.partid $condStr2";
-                    $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {

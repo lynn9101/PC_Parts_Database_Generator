@@ -216,7 +216,6 @@
                     ON g2.cpuid = g3.cpuid
                     INNER JOIN cpu
                     ON cpu.partid = g3.cpuid $condStr2";
-                    $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {

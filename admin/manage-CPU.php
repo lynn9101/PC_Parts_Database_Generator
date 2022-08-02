@@ -100,7 +100,6 @@
 
                     // Query to get all suppliers in the database
                     $sql = "SELECT * FROM cpu $condStr";
-                    $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {
