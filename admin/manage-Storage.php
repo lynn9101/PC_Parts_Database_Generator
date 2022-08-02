@@ -103,8 +103,8 @@
                                 <tr>
                                     <td><?php echo $model; ?></td>
                                     <td><?php echo $modelsize; ?>GB</td>
-                                    <td><?php echo $writespeed; ?>GB/s</td>
-                                    <td><?php echo $readspeed; ?>GB/s</td>
+                                    <td><?php echo $writespeed; ?>MB/s</td>
+                                    <td><?php echo $readspeed; ?>MB/s</td>
                                     <td><?php echo 'N/A'; ?></td>
                                     <td><?php echo $rpm; ?>RPM</td>
 
