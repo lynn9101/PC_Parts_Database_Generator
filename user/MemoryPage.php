@@ -11,19 +11,102 @@
 
     <!-- Main Content Section -->
     <section class="product-main-content">
-        <div class="filter-selection">
+        <div class="filter-selection text-center">
+        
+        <form action="http://localhost/pc_parts_database_generator/user/MemoryPage.php" method="POST">
             <div class="filter">
-                <h3>></h3>
                 <h3>Size</h3>
             </div>
+            <?php
+                // Query to get all suppliers in the database
+                $sql = "SELECT MIN(sizeGB) min, MAX(sizeGB) max
+                FROM memory2";
+                $conn = OpenCon();
+                $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                if ($result == TRUE) {
+                    // Count the number of rows needed in the table
+                    $numRows = mysqli_num_rows($result);
+
+                    if ($numRows > 0) {
+                        while ($rows = mysqli_fetch_assoc($result)) {
+                            // Get data from each row
+                            $min = $rows['min'];
+                            $max = $rows['max'];
+                        }
+                    }
+                }
+            ?>
+            <br>
+            <label for="min-s">min:</label>
+            <input type="number" name="min-s" min=<?php echo $min;?> min=<?php echo $max;?> value=<?php echo $min;?>>
+            <br>
+            <label for="max-s">max:</label>
+            <input type="number" name="max-s" min=<?php echo $min;?> min=<?php echo $max;?> value=<?php echo $max;?>>
+            <p class="text-center range-text">(min: <?php echo $min;?> max: <?php echo $max;?>)</p>
+
             <div class="filter">
-                <h3>></h3>
                 <h3>Speed</h3>
             </div>
+            <select name="speed" class="filter-dropdown">
+                <option value="0">All</option>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT DISTINCT speed 
+                    FROM memory2";
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $speed = $rows['speed'];
+                                ?>
+                                <option value="<?php echo $speed?>"><?php echo $speed?></option>
+
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+            </select>
+
             <div class="filter">
-                <h3>></h3>
                 <h3>Form Factor</h3>
             </div>
+            <select name="ff" class="filter-dropdown">
+                <option value="0">All</option>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT DISTINCT formfactor 
+                    FROM memory1";
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $ff = $rows['formfactor'];
+                                ?>
+                                <option value="<?php echo $ff?>"><?php echo $ff?></option>
+
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+            </select>
+
+            <div class="confirm-section">
+                <input type="submit" name="confirm-filter" value="Confirm" class="confirm-btn">
+            </div>
+        </form>
         </div>
         
         <div class="results-section">
@@ -35,11 +118,48 @@
                     <th>Form Factor</th>
                 </tr>
                 <?php
+                    $cond = [];
+                    if(isset($_POST['ff'])){
+                        $ff = 'm1.formfactor = "' . $_POST['ff'] . '"';
+                        if($_POST['ff'] != 0){
+                            array_push($cond, $ff);
+                        }
+                    }
+                    if(isset($_POST['speed'])){
+                        $speed = 'm2.speed = "' . $_POST['speed'] . '"';
+                        if($_POST['speed'] != 0){
+                            array_push($cond, $speed);
+                        }
+                    }
+
+                    $condStr2 = "";
+                    $condStr = "";
+                    if(isset($_POST['min-s'])){
+                        $min = $_POST['min-s'];
+                        $max = $_POST['max-s'];
+                        $condStr2 = "WHERE m2.sizeGB >= $min AND m2.sizeGB <= $max";
+                        if(count($cond) > 0){
+                            $condStr = " AND m1.partid IN (SELECT m1.partid
+                            FROM memory1 m1
+                            INNER JOIN memory2 m2
+                            ON m1.partid = m2.partid
+                            WHERE ";
+                            for($x = 0; $x < count($cond); $x++){
+                                $condStr .= $cond[$x];
+                                if($x + 1 != count($cond)){
+                                    $condStr .= " OR ";
+                                }
+                            }
+                            $condStr .= ")";
+                            $condStr2 .= $condStr;
+                        }
+                    }
+
                     // Query to get all suppliers in the database
                     $sql = "SELECT m1.partid id, m1.formfactor ff, m2.modelname model, m2.sizeGB size, m2.speed 
-                    FROM memory1 m1, memory2 m2 
-                    WHERE m1.partid = m2.partid";
-                    $conn = OpenCon();
+                    FROM memory1 m1
+                    INNER JOIN memory2 m2 
+                    ON m1.partid = m2.partid $condStr2";
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {

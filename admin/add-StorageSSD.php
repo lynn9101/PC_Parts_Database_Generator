@@ -4,7 +4,7 @@
         <!-- Banner Section -->
         <div class="page-banner">
             <div class="banner-text">
-                <h1>Case</h1>
+                <h1>Storage - SSD</h1>
             </div>
         </div>
         <!-- End Banner Section -->
@@ -20,12 +20,13 @@
                 } else {
                     $title2 = 'UPDATE MODEL';
                     $itemmodel = $_GET['model'];
-                    $itemcolor = $_GET['color'];
+                    $itemsize = $_GET['size'];
+                    $itemff = $_GET['ff'];
 
-                    // Get all information of that Memory
-                    $sql = "SELECT c1.modelname model, c1.formfactor ff, c2.colour color 
-                            FROM case1 c1, case2 c2 
-                            WHERE c1.modelname = c2.modelname AND c1.modelname='$itemmodel' AND c2.colour='$itemcolor'";
+                    // Get all information of that SSD Storage
+                    $sql = "SELECT s1.model, s2.storagesizeGB modelsize, s1.writespeedMBps writespeed, s1.readspeedMBps readspeed, s2.formfactor ff
+                            FROM SSDStorage1 s1, SSDStorage2 s2 
+                            WHERE s1.model = s2.model AND s1.model = '$itemmodel' AND s2.storagesizeGB = $itemsize AND s2.formfactor = '$itemff'";
                     $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
@@ -37,45 +38,79 @@
                             $row = mysqli_fetch_assoc($result);
 
                             $modelname = $row['model'];
-                            $modelff = $row['ff'];
-                            $modelcolor = $row['color'];
+                            $modelsize = $row['modelsize'];
+                            $writespeed = $row['writespeed'];
+                            $readspeed = $row['readspeed'];
+                            $formfactor = $row['ff'];
                         }
                     }
                     ?>
                     <h2 class="activity-title"><?php echo $title2; ?></h2>
                     <?php
                 }
-            ?>
+            ?>    
 
             <form action="" method="POST">
                 <table>
                     <tr>
-                        <td>Model Name</td>
+                        <td>Model</td>
                         <td>
                             <?php
                                 if ($type == 'add') {
                                     ?>
-                                    <input required type="text" name="model_name" placeholder="enter model name">
+                                    <input required type="text" name="model" placeholder="enter model name">
                                     <?php
                                 } else {
                                     ?>
-                                    <input type="text" name="model_name" value="<?php echo $modelname; ?>">
+                                    <input type="text" name="model" value="<?php echo $modelname; ?>">
                                     <?php
                                 }
                             ?>
                         </td>
                     </tr>
                     <tr>
-                        <td>Model Colour</td>
+                        <td>Storage Size</td>
                         <td>
                             <?php
                                 if ($type == 'add') {
                                     ?>
-                                    <input required type="text" name="colour" placeholder="enter model colour">
+                                    <input required type="number" name="storage_size" placeholder="enter model storage size in GB">
                                     <?php
                                 } else {
                                     ?>
-                                    <input type="text" name="colour" value="<?php echo $modelcolor; ?>">
+                                    <input type="number" name="storage_size" value="<?php echo $modelsize; ?>">
+                                    <?php
+                                }
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Write Speed</td>
+                        <td>
+                            <?php
+                                if ($type == 'add') {
+                                    ?>
+                                    <input required type="number" name="write_speed" placeholder="enter write speed of model in GB/s">
+                                    <?php
+                                } else {
+                                    ?>
+                                    <input type="number" name="write_speed" value="<?php echo $writespeed; ?>">
+                                    <?php
+                                }
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Read Speed</td>
+                        <td>
+                            <?php
+                                if ($type == 'add') {
+                                    ?>
+                                    <input required type="number" name="read_speed" placeholder="enter read speed of models in GB/s">
+                                    <?php
+                                } else {
+                                    ?>
+                                    <input type="number" name="read_speed" value="<?php echo $readspeed; ?>">
                                     <?php
                                 }
                             ?>
@@ -87,17 +122,16 @@
                             <?php
                                 if ($type == 'add') {
                                     ?>
-                                    <input required type="text" name="form_factor" placeholder="enter model form factor">
+                                    <input required type="text" name="form_factor" placeholder="enter form factor of model">
                                     <?php
                                 } else {
                                     ?>
-                                    <input type="text" name="form_factor" value="<?php echo $modelff; ?>">
+                                    <input type="text" name="form_factor" value="<?php echo $formfactor; ?>">
                                     <?php
                                 }
                             ?>
                         </td>
                     </tr>
-                    
                 </table>
                 <!--confirm button-->
                 <br>
@@ -118,16 +152,18 @@
 <?php include('partials/footer.php'); ?>
 <?php
     ob_start();
-    // Check whether the confirm button is clicked or not
+    // Check whether the confirm button is clicked or nor
     if (isset($_POST['submit'])) {
         // Get the data from the form
-        $model_name = $_POST['model_name'];
-        $colour = $_POST['colour'];
+        $model_name = $_POST['model'];
+        $storage_size = $_POST['storage_size'];
+        $write_speed = $_POST['write_speed'];
+        $read_speed = $_POST['read_speed'];
         $form_factor = $_POST['form_factor'];
 
         // Create the SQL queries
-        $sql1 = "INSERT INTO Case1 VALUES ('$model_name','$form_factor');";
-        $sql2 = "INSERT INTO Case2 VALUES ('$model_name','$colour');";
+        $sql1 = "INSERT INTO SSDStorage1 VALUES ('$model_name',$write_speed, $read_speed);";
+        $sql2 = "INSERT INTO SSDStorage2 VALUES ($storage_size,'$model_name', '$form_factor');";
         $conn = OpenCon();
         $result1 = mysqli_query($conn, $sql1) or die(mysqli_error($conn));
         $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
@@ -141,25 +177,29 @@
             ob_end_flush();
         } else {
             // Redirect to previous page
-            header("location: http://localhost/pc_parts_database_generator/admin/add-Case.php");
+            header("location: http://localhost/pc_parts_database_generator/admin/add-StorageSSD.php");
         }
     }
 
     // Check whether the UPDATE button is clicked or not
     if (isset($_POST['update'])) {
-        $model_name = $_POST['model_name'];
-        $colour = $_POST['colour'];
+        $model_name = $_POST['model'];
+        $storage_size = $_POST['storage_size'];
+        $write_speed = $_POST['write_speed'];
+        $read_speed = $_POST['read_speed'];
         $form_factor = $_POST['form_factor'];
 
         // Create the SQL queries
-        $sql1 = "UPDATE Case1 SET
-                modelname='$model_name',
-                formfactor='$form_factor'
-                WHERE modelname='$itemmodel'";
+        $sql1 = "UPDATE SSDStorage1 SET
+                model='$model_name',
+                writespeedMBps='$write_speed',
+                readspeedMBps='$read_speed'
+                WHERE model='$itemmodel'";
 
-        $sql2 = "UPDATE Case2 SET
-                colour='$colour'
-                WHERE modelname='$model_name' AND colour='$itemcolor'";
+        $sql2 = "UPDATE SSDStorage2 SET
+                storagesizeGB='$storage_size',
+                formfactor='$form_factor'
+                WHERE model = '$model_name' AND storagesizeGB = '$itemsize' AND formfactor = '$itemff'";
 
         $result1 = mysqli_query($conn, $sql1) or die(mysqli_error($conn));
         $result2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
@@ -168,12 +208,12 @@
         if ($result1 == TRUE && $result2 == TRUE) {
             // Redirect to previous page
             if (!headers_sent()) {
-                header("location: http://localhost/pc_parts_database_generator/admin/manage-Case.php");
+                header("location: http://localhost/pc_parts_database_generator/admin/manage-Storage.php");
             }
             ob_end_flush();
         } else {
             // Redirect to previous page
-            header("location: http://localhost/pc_parts_database_generator/admin/manage-Case.php");
+            header("location: http://localhost/pc_parts_database_generator/admin/manage-Storage.php");
         }
     }
 ?>
