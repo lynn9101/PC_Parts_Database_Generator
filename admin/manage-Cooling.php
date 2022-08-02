@@ -11,19 +11,72 @@
 
     <!-- Main Content Section -->
     <section class="product-main-content">
-        <div class="filter-selection">
+        <div class="filter-selection text-center">
+        <form action="http://localhost/pc_parts_database_generator/admin/manage-Cooling.php" method="POST">
             <div class="filter">
-                <h3>></h3>
-                <h3>Model Name</h3>
-            </div>
-            <div class="filter">
-                <h3>></h3>
                 <h3>Colour</h3>
             </div>
+            <select name="color" class="filter-dropdown">
+                <option value="0">All</option>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT DISTINCT colour 
+                    FROM coolingsystem2";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $color = $rows['colour'];
+                                ?>
+                                <option value=<?php echo $color?>><?php echo $color?></option>
+
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+            </select>
+
             <div class="filter">
-                <h3>></h3>
                 <h3>Noise Level</h3>
             </div>
+            <?php
+                // Query to get all suppliers in the database
+                $sql = "SELECT MIN(noiseleveldB) min, MAX(noiseleveldB) max
+                FROM coolingsystem1";
+                $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                if ($result == TRUE) {
+                    // Count the number of rows needed in the table
+                    $numRows = mysqli_num_rows($result);
+
+                    if ($numRows > 0) {
+                        while ($rows = mysqli_fetch_assoc($result)) {
+                            // Get data from each row
+                            $min = $rows['min'];
+                            $max = $rows['max'];
+                        }
+                    }
+                }
+            ?>
+            <br>
+            <label for="min-n">min:</label>
+            <input type="number" name="min-n" min=<?php echo $min;?> min=<?php echo $max;?> value=<?php echo $min;?>>
+            <br>
+            <label for="max-n">max:</label>
+            <input type="number" name="max-n" min=<?php echo $min;?> min=<?php echo $max;?> value=<?php echo $max;?>>
+            <p class="text-center">(min: <?php echo $min;?> max: <?php echo $max;?>)</p>
+
+            <div class="confirm-section">
+                <input type="submit" name="confirm-filter" value="Confirm" class="confirm-btn">
+            </div>
+        </form>
         </div>
         
         <div class="results-section">
@@ -35,10 +88,21 @@
                     <th>Action</th>
                 </tr>
                 <?php
+                    $condStr = "";
+                    if(isset($_POST['min-n'])){
+                        $min = $_POST['min-n'];
+                        $max = $_POST['max-n'];
+                        $condStr = "WHERE c1.noiseleveldB >= $min AND c1.noiseleveldB <= $max";
+                        if($_POST['color'] != 0){
+                            $condStr .= ' AND c2.colour = "' . $_POST['color'] . '"';
+                        }
+                    }
+
                     // Query to get all suppliers in the database
                     $sql = "SELECT c1.modelname model, c1.noiseleveldB noise, c2.colour 
-                    FROM coolingsystem1 c1, coolingsystem2 c2 
-                    WHERE c1.modelname = c2.modelname";
+                    FROM coolingsystem1 c1
+                    INNER JOIN coolingsystem2 c2 
+                    ON c1.modelname = c2.modelname $condStr";
                     $conn = OpenCon();
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
