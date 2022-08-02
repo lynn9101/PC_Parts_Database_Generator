@@ -160,36 +160,15 @@ FOREIGN KEY (userid) REFERENCES User1(userid) );
 CREATE TABLE manufacturer_supplies
 (id INT NOT NULL AUTO_INCREMENT,
  name CHAR(20) NOT NULL,
- contactinto CHAR(50) NOT NULL,
+ contactinfo CHAR(50) NOT NULL,
  address CHAR(100) NOT NULL,
  password CHAR(100) NOT NULL,
  PRIMARY KEY (id));
-
-CREATE TABLE Manufacturer_Supplies1
-(name CHAR(20) NOT NULL,
-contactinfo CHAR(50) NOT NULL,
-address CHAR(100) NOT NULL,
-PRIMARY KEY (name) );
-
-CREATE TABLE Manufacturer_Supplies2
-(id INT NOT NULL,
-name CHAR(20) NOT NULL,
-PRIMARY KEY (id),
-FOREIGN KEY (name) REFERENCES Manufacturer_Supplies1(name) );
-
-CREATE TABLE Manufacturer_Supplies3
-(manufacturerid INT NOT NULL,
-orderid INT NOT NULL,
-userid INT NOT NULL,
-PRIMARY KEY (manufacturerid, orderid, userid),
-FOREIGN KEY (manufacturerid) REFERENCES Manufacturer_Supplies2(id),
-FOREIGN KEY (userid, orderid) REFERENCES OrderPCPart_Orders(userid, orderid) );
 
 CREATE TABLE categories (
 id INT NOT NULL AUTO_INCREMENT,
 title CHAR(20) NOT NULL,
 PRIMARY KEY(id) );
-
 
 INSERT INTO Motherboard1 VALUES ('AT', 512);
 INSERT INTO Motherboard1 VALUES ('SSI CEB', 4096);
