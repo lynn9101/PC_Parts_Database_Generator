@@ -11,19 +11,72 @@
 
     <!-- Main Content Section -->
     <section class="product-main-content">
-        <div class="filter-selection">
+        <div class="filter-selection text-center">
+        <form action="http://localhost/pc_parts_database_generator/admin/manage-Case.php" method="POST">
             <div class="filter">
-                <h3>></h3>
-                <h3>Model</h3>
-            </div>
-            <div class="filter">
-                <h3>></h3>
                 <h3>Colour</h3>
             </div>
+            <select name="color" class="filter-dropdown">
+                <option value="0">All</option>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT DISTINCT colour 
+                    FROM case2";
+                    $conn = OpenCon();
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $color = $rows['colour'];
+                                ?>
+                                <option value=<?php echo $color?>><?php echo $color?></option>
+
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+            </select>
+
             <div class="filter">
-                <h3>></h3>
                 <h3>Form Factor</h3>
             </div>
+            <select name="ff" class="filter-dropdown">
+                <option value="0">All</option>
+                <?php
+                    // Query to get all suppliers in the database
+                    $sql = "SELECT DISTINCT formfactor 
+                    FROM case1";
+                    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    if ($result == TRUE) {
+                        // Count the number of rows needed in the table
+                        $numRows = mysqli_num_rows($result);
+
+                        if ($numRows > 0) {
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                                // Get data from each row
+                                $ff = $rows['formfactor'];
+                                ?>
+
+                                <option value="<?php echo $ff?>"><?php echo $ff?></option>
+
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+            </select>
+
+            <div class="confirm-section">
+                <input type="submit" name="confirm-filter" value="Confirm" class="confirm-btn">
+            </div>
+        </form>
         </div>
         
         <div class="results-section">
@@ -35,9 +88,36 @@
                     <th>Action</th>
                 </tr>
                 <?php
+                    $cond = [];
+                    if(isset($_POST['color'])){
+                        $color = 'c2.colour = "' . $_POST['color'] . '"';
+                        if($_POST['color'] != 0){
+                            array_push($cond, $color);
+                        }
+                    }
+                    if(isset($_POST['ff'])){
+                        $ff = 'c1.formfactor = "' . $_POST['ff'] . '"';
+                        if($_POST['ff'] != 0){
+                            array_push($cond, $ff);
+                        }
+                    }
+
+                    $condStr = "";
+                    if(count($cond) > 0){
+                        $condStr = "WHERE ";
+                        for($x = 0; $x < count($cond); $x++){
+                            $condStr .= $cond[$x];
+                            if($x + 1 != count($cond)){
+                                $condStr .= " OR ";
+                            }
+                        }
+                    }
+
                     // Query to get all suppliers in the database
-                    $sql = "SELECT c1.modelname model, c1.formfactor ff, c2.colour color FROM case1 c1, case2 c2 WHERE c1.modelname = c2.modelname";
-                    $conn = OpenCon();
+                    $sql = "SELECT c1.modelname model, c1.formfactor ff, c2.colour color 
+                    FROM case1 c1
+                    INNER JOIN case2 c2 
+                    ON c1.modelname = c2.modelname $condStr";
                     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                     if ($result == TRUE) {
