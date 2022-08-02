@@ -37,9 +37,6 @@
                         <a href="add-component.php">Component</a>
                     </li>
                     <li>
-                        <a href="orders-list.php">Orders</a>
-                    </li>
-                    <li>
                         <a href="supplier-logout.php">Logout</a>
                     </li>
                 </ul>
