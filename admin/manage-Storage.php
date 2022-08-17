@@ -1,5 +1,7 @@
 <?php include('partials/manage-header.php'); ?>
 
+    <script src="../user/storage.js" defer></script>
+
     <!-- Banner Section -->
     <div class="product-banner">
         <img src="../images/storage wallpaper.jpg" class="banner-img">
